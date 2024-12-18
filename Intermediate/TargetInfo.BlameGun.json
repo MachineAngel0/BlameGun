@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "BlameGun",
+			"Path": "..\\Source\\BlameGun.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "BlameGunEditor",
+			"Path": "..\\Source\\BlameGunEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

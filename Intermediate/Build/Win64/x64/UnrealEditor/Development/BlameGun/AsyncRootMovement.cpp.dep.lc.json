@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun\\source\\blamegun\\private\\asyncrootmovement.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue5.4.3source\\unrealengine-5.4.3-release\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blamegun\\definitions.blamegun.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun\\source\\blamegun\\public\\asyncrootmovement.h",
+            "e:\\ue5.4.3source\\unrealengine-5.4.3-release\\engine\\source\\runtime\\engine\\classes\\engine\\cancellableasyncaction.h",
+            "e:\\ue5.4.3source\\unrealengine-5.4.3-release\\engine\\source\\runtime\\engine\\classes\\kismet\\blueprintasyncactionbase.h",
+            "e:\\ue5.4.3source\\unrealengine-5.4.3-release\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\blueprintasyncactionbase.generated.h",
+            "e:\\ue5.4.3source\\unrealengine-5.4.3-release\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cancellableasyncaction.generated.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\asyncrootmovement.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

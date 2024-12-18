@@ -1,0 +1,39 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.BlameGun.cpp.obj": [
+			"AsyncRootMovement.gen.cpp.obj",
+			"BlameGun.init.gen.cpp.obj",
+			"CharacterBase.gen.cpp.obj",
+			"ChargeShotComponent.gen.cpp.obj",
+			"EnemyBase.gen.cpp.obj",
+			"EquipWeaponComponent.gen.cpp.obj",
+			"FireRateComponent.gen.cpp.obj",
+			"Interface_Character.gen.cpp.obj",
+			"Interface_Weapon.gen.cpp.obj",
+			"MainCharacter.gen.cpp.obj",
+			"NormalShotComponent.gen.cpp.obj",
+			"ProjectileActor.gen.cpp.obj",
+			"ProjectileSpawnerComponent.gen.cpp.obj",
+			"SprintComponent.gen.cpp.obj",
+			"WeaponBase.gen.cpp.obj",
+			"WeaponBaseComponent.gen.cpp.obj",
+			"BlameGun.cpp.obj",
+			"AsyncRootMovement.cpp.obj",
+			"CharacterBase.cpp.obj",
+			"EquipWeaponComponent.cpp.obj",
+			"Interface_Character.cpp.obj",
+			"SprintComponent.cpp.obj",
+			"EnemyBase.cpp.obj",
+			"MainCharacter.cpp.obj",
+			"ChargeShotComponent.cpp.obj",
+			"FireRateComponent.cpp.obj",
+			"NormalShotComponent.cpp.obj",
+			"Interface_Weapon.cpp.obj",
+			"ProjectileActor.cpp.obj",
+			"ProjectileSpawnerComponent.cpp.obj",
+			"WeaponBase.cpp.obj",
+			"WeaponBaseComponent.cpp.obj"
+		]
+	}
+}

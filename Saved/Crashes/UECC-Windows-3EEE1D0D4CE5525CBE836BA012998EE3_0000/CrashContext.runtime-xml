@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FGenericCrashContext>
+<RuntimeProperties>
+<CrashVersion>3</CrashVersion>
+<ExecutionGuid>FB534CA442694A21674194B6865DE679</ExecutionGuid>
+<CrashGUID>UECC-Windows-3EEE1D0D4CE5525CBE836BA012998EE3_0000</CrashGUID>
+<IsEnsure>true</IsEnsure>
+<IsStall>false</IsStall>
+<IsAssert>false</IsAssert>
+<CrashType>Ensure</CrashType>
+<ErrorMessage>Ensure condition failed: false  [File:E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Engine\Private\StaticMesh.cpp] [Line: 3460] 
+Accessing property SourceModels of the StaticMesh while it is still being built asynchronously is only supported on the game-thread. To avoid any race-condition, consider finishing the compilation before pushing tasks to other threads or making higher-level game-thread code async aware so it schedules the task only when the static mesh&apos;s compilation is finished. If this is a blocker, you can disable async static mesh from the editor experimental settings.
+Stack: 
+0x00007ff8790b0389 UnrealEditor-Engine.dll!UStaticMesh::WaitUntilAsyncPropertyReleased() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Engine\Private\StaticMesh.cpp:3460]
+0x00007ff87904aa9f UnrealEditor-Engine.dll!UStaticMesh::CacheDerivedData() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Engine\Private\StaticMesh.cpp:5548]
+0x00007ff87905d78e UnrealEditor-Engine.dll!UStaticMesh::ExecutePostLoadInternal() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Engine\Private\StaticMesh.cpp:6331]
+0x00007ff87905b15c UnrealEditor-Engine.dll!FAsyncTask&lt;FStaticMeshAsyncBuildWorker&gt;::DoTaskWork() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Async\AsyncWork.h:630]
+0x00007ff8771c77b6 UnrealEditor-Engine.dll!FAsyncTaskBase::DoWork() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Async\AsyncWork.h:289]
+0x00007ff8771c729e UnrealEditor-Engine.dll!FAsyncTaskBase::DoThreadedWork() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Async\AsyncWork.h:313]
+0x00007ff88a770733 UnrealEditor-Core.dll!FQueuedThreadPoolWrapper::FScheduledWork::DoThreadedWork() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Misc\QueuedThreadPoolWrapper.h:141]
+0x00007ff8774c8904 UnrealEditor-Engine.dll!FQueuedThreadPoolWrapper::FScheduledWork::DoThreadedWork() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Misc\QueuedThreadPoolWrapper.h:141]
+0x00007ff6bc4d9edf UnrealEditor.exe!`LowLevelTasks::FTask::Init&lt;`FQueuedLowLevelThreadPool::AddQueuedWork&apos;::`2&apos;::&lt;lambda_1&gt; &gt;&apos;::`13&apos;::&lt;lambda_1&gt;::operator()() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Async\Fundamental\Task.h:499]
+0x00007ff6bc4e1d53 UnrealEditor.exe!LowLevelTasks::TTaskDelegate&lt;LowLevelTasks::FTask * __cdecl(bool),48&gt;::TTaskDelegateImpl&lt;`LowLevelTasks::FTask::Init&lt;`FQueuedLowLevelThreadPool::AddQueuedWork&apos;::`2&apos;::&lt;lambda_1&gt; &gt;&apos;::`13&apos;::&lt;lambda_1&gt;,0&gt;::CallAndMove() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Async\Fundamental\TaskDelegate.h:171]
+0x00007ff88a356d05 UnrealEditor-Core.dll!LowLevelTasks::FTask::ExecuteTask() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Async\Fundamental\Task.h:627]
+0x00007ff88a356bce UnrealEditor-Core.dll!LowLevelTasks::FScheduler::ExecuteTask() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Private\Async\Fundamental\Scheduler.cpp:177]
+0x00007ff88a37fb95 UnrealEditor-Core.dll!LowLevelTasks::FScheduler::WorkerMain() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Private\Async\Fundamental\Scheduler.cpp:397]
+0x00007ff88a345bd0 UnrealEditor-Core.dll!UE::Core::Private::Function::TFunctionRefCaller&lt;`LowLevelTasks::FScheduler::CreateWorker&apos;::`2&apos;::&lt;lambda_1&gt;,void __cdecl(void)&gt;::Call() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Public\Templates\Function.h:406]
+0x00007ff88a54aaf3 UnrealEditor-Core.dll!FThreadImpl::Run() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Private\HAL\Thread.cpp:69]
+0x00007ff88a97fd7d UnrealEditor-Core.dll!FRunnableThreadWin::Run() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Private\Windows\WindowsRunnableThread.cpp:149]
+0x00007ff88a96f50a UnrealEditor-Core.dll!FRunnableThreadWin::GuardedRun() [E:\UE5.4.3Source\UnrealEngine-5.4.3-release\Engine\Source\Runtime\Core\Private\Windows\WindowsRunnableThread.cpp:79]
+0x00007ff94118259d KERNEL32.DLL!UnknownFunction []
+0x00007ff9420caf38 ntdll.dll!UnknownFunction []
+</ErrorMessage>
+<CrashReporterMessage></CrashReporterMessage>
+<CrashReporterMessage>Attended</CrashReporterMessage>
+<ProcessId>29108</ProcessId>
+<SecondsSinceStart>0</SecondsSinceStart>
+<IsInternalBuild>false</IsInternalBuild>
+<IsPerforceBuild>false</IsPerforceBuild>
+<IsWithDebugInfo>true</IsWithDebugInfo>
+<IsSourceDistribution>true</IsSourceDistribution>
+<GameName>UE-BlameGun</GameName>
+<ExecutableName>UnrealEditor</ExecutableName>
+<BuildConfiguration>Development</BuildConfiguration>
+<GameSessionID></GameSessionID>
+<PlatformName>WindowsEditor</PlatformName>
+<PlatformFullName>WindowsEditor</PlatformFullName>
+<PlatformNameIni>Windows</PlatformNameIni>
+<EngineMode>Editor</EngineMode>
+<EngineModeEx>Unset</EngineModeEx>
+<DeploymentName></DeploymentName>
+<EngineVersion>5.4.3-0+UE5</EngineVersion>
+<EngineCompatibleVersion>5.4.3-0+UE5</EngineCompatibleVersion>
+<CommandLine> &quot;C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\BlameGun.uproject&quot; -skipcompile</CommandLine>
+<LanguageLCID>0</LanguageLCID>
+<AppDefaultLocale>en-US</AppDefaultLocale>
+<BuildVersion>UE5-CL-0</BuildVersion>
+<Symbols>UE5-CL-0-Win64-Development</Symbols>
+<IsUERelease>false</IsUERelease>
+<IsRequestingExit>false</IsRequestingExit>
+<UserName></UserName>
+<BaseDir>E:/UE5.4.3Source/UnrealEngine-5.4.3-release/Engine/Binaries/Win64/</BaseDir>
+<RootDir>E:/UE5.4.3Source/UnrealEngine-5.4.3-release/</RootDir>
+<MachineId>9E751C9C40AB142B0C7B8C924FFAC7A9</MachineId>
+<LoginId>9e751c9c40ab142b0c7b8c924ffac7a9</LoginId>
+<EpicAccountId>93420f26784244258f4f751648023972</EpicAccountId>
+<SourceContext></SourceContext>
+<UserDescription></UserDescription>
+<UserActivityHint></UserActivityHint>
+<CrashDumpMode>0</CrashDumpMode>
+<GameStateName></GameStateName>
+<Misc.NumberOfCores>8</Misc.NumberOfCores>
+<Misc.NumberOfCoresIncludingHyperthreads>16</Misc.NumberOfCoresIncludingHyperthreads>
+<Misc.Is64bitOperatingSystem>1</Misc.Is64bitOperatingSystem>
+<Misc.CPUVendor>AuthenticAMD</Misc.CPUVendor>
+<Misc.CPUBrand>AMD Ryzen 7 5800X 8-Core Processor             </Misc.CPUBrand>
+<Misc.PrimaryGPUBrand>NVIDIA GeForce RTX 3080</Misc.PrimaryGPUBrand>
+<Misc.OSVersionMajor>Windows 11 (23H2) [10.0.22631.4602]</Misc.OSVersionMajor>
+<Misc.OSVersionMinor></Misc.OSVersionMinor>
+<Misc.AnticheatProvider></Misc.AnticheatProvider>
+<MemoryStats.TotalPhysical>34235355136</MemoryStats.TotalPhysical>
+<MemoryStats.TotalVirtual>63226384384</MemoryStats.TotalVirtual>
+<MemoryStats.PageSize>4096</MemoryStats.PageSize>
+<MemoryStats.TotalPhysicalGB>32</MemoryStats.TotalPhysicalGB>
+<MemoryStats.AvailablePhysical>3786936320</MemoryStats.AvailablePhysical>
+<MemoryStats.AvailableVirtual>19950297088</MemoryStats.AvailableVirtual>
+<MemoryStats.UsedPhysical>2207281152</MemoryStats.UsedPhysical>
+<MemoryStats.PeakUsedPhysical>2207363072</MemoryStats.PeakUsedPhysical>
+<MemoryStats.UsedVirtual>2384416768</MemoryStats.UsedVirtual>
+<MemoryStats.PeakUsedVirtual>2384416768</MemoryStats.PeakUsedVirtual>
+<MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+<MemoryStats.OOMAllocationSize>0</MemoryStats.OOMAllocationSize>
+<MemoryStats.OOMAllocationAlignment>0</MemoryStats.OOMAllocationAlignment>
+<NumMinidumpFramesToIgnore>6</NumMinidumpFramesToIgnore>
+<CallStack></CallStack>
+<PCallStack>
+
+UnrealEditor-Engine  0x00007ff876b30000 + 2580389         
+UnrealEditor-Engine  0x00007ff876b30000 + 251aa9f         
+UnrealEditor-Engine  0x00007ff876b30000 + 252d78e         
+UnrealEditor-Engine  0x00007ff876b30000 + 252b15c         
+UnrealEditor-Engine  0x00007ff876b30000 + 6977b6          
+UnrealEditor-Engine  0x00007ff876b30000 + 69729e          
+UnrealEditor-Core    0x00007ff88a270000 + 500733          
+UnrealEditor-Engine  0x00007ff876b30000 + 998904          
+UnrealEditor         0x00007ff6bc4c0000 + 19edf           
+UnrealEditor         0x00007ff6bc4c0000 + 21d53           
+UnrealEditor-Core    0x00007ff88a270000 + e6d05           
+UnrealEditor-Core    0x00007ff88a270000 + e6bce           
+UnrealEditor-Core    0x00007ff88a270000 + 10fb95          
+UnrealEditor-Core    0x00007ff88a270000 + d5bd0           
+UnrealEditor-Core    0x00007ff88a270000 + 2daaf3          
+UnrealEditor-Core    0x00007ff88a270000 + 70fd7d          
+UnrealEditor-Core    0x00007ff88a270000 + 6ff50a          
+KERNEL32             0x00007ff941170000 + 1259d           
+</PCallStack>
+<PCallStackHash>292611F3FA462CA650E2D648B2ABF6BD2F2F7D08</PCallStackHash>
+</RuntimeProperties>
+<PlatformProperties>
+<PlatformIsRunningWindows>1</PlatformIsRunningWindows>
+<IsRunningOnBattery>false</IsRunningOnBattery>
+<DriveStats.Project.Name>E:/UE5.4.3Source/UnrealEngine-5.4.3-release/Engine/Binaries/Win64/</DriveStats.Project.Name>
+<DriveStats.Project.Type>NVMe</DriveStats.Project.Type>
+<DriveStats.Project.FreeSpaceKb>874024508</DriveStats.Project.FreeSpaceKb>
+<DriveStats.PersistentDownload.Name>C:/Users/Adams Humbert/Documents/Unreal Projects/BlameGun/Saved/PersistentDownloadDir</DriveStats.PersistentDownload.Name>
+<DriveStats.PersistentDownload.Type>NVMe</DriveStats.PersistentDownload.Type>
+<DriveStats.PersistentDownload.FreeSpaceKb>20631184</DriveStats.PersistentDownload.FreeSpaceKb>
+<PlatformCallbackResult>0</PlatformCallbackResult>
+<CrashTrigger>0</CrashTrigger>
+</PlatformProperties>
+<EngineData>
+<MatchingDPStatus>WindowsEditorNo errors</MatchingDPStatus>
+<RHI.IntegratedGPU>false</RHI.IntegratedGPU>
+<RHI.DriverDenylisted>false</RHI.DriverDenylisted>
+<RHI.D3DDebug>false</RHI.D3DDebug>
+<RHI.Breadcrumbs>true</RHI.Breadcrumbs>
+<RHI.DRED>false</RHI.DRED>
+<RHI.DREDMarkersOnly>true</RHI.DREDMarkersOnly>
+<RHI.DREDContext>false</RHI.DREDContext>
+<RHI.Aftermath>true</RHI.Aftermath>
+<RHI.RHIName>D3D12</RHI.RHIName>
+<RHI.AdapterName>NVIDIA GeForce RTX 3080</RHI.AdapterName>
+<RHI.UserDriverVersion>566.03</RHI.UserDriverVersion>
+<RHI.InternalDriverVersion>32.0.15.6603</RHI.InternalDriverVersion>
+<RHI.DriverDate>10-15-2024</RHI.DriverDate>
+<RHI.FeatureLevel>SM6</RHI.FeatureLevel>
+<RHI.GPUVendor>NVIDIA</RHI.GPUVendor>
+<RHI.DeviceId>2216</RHI.DeviceId>
+<DeviceProfile.Name>WindowsEditor</DeviceProfile.Name>
+</EngineData>
+<GameData>
+</GameData>
+</FGenericCrashContext>

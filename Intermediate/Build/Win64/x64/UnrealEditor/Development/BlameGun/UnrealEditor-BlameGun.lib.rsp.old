@@ -1,0 +1,41 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-BlameGun.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\AsyncRootMovement.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\BlameGun.init.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\CharacterBase.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ChargeShotComponent.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\EnemyBase.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\EquipWeaponComponent.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\Interface_Character.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\Interface_Weapon.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\MainCharacter.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\NormalShotComponent.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileActor.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\SprintComponent.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\WeaponBase.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\WeaponBaseComponent.gen.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\BlameGun.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\AsyncRootMovement.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\CharacterBase.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\EnemyBase.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\MainCharacter.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\EquipWeaponComponent.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\Interface_Character.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\SprintComponent.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ChargeShotComponent.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\Interface_Weapon.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\NormalShotComponent.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileActor.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\WeaponBase.cpp.obj"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\WeaponBaseComponent.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\UnrealEditor-BlameGun.lib"
