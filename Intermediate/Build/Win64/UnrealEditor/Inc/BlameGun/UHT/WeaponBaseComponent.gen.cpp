@@ -96,14 +96,14 @@ UWeaponBaseComponent::~UWeaponBaseComponent() {}
 // End Class UWeaponBaseComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UWeaponBaseComponent, UWeaponBaseComponent::StaticClass, TEXT("UWeaponBaseComponent"), &Z_Registration_Info_UClass_UWeaponBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UWeaponBaseComponent), 816819731U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_83129058(TEXT("/Script/BlameGun"),
-	Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_83129058(TEXT("/Script/BlameGun"),
+	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

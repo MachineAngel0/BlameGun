@@ -14,13 +14,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BLAMEGUN_EquipWeaponComponent_generated_h
 
-#define FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSwitchToWeaponNumber); \
 	DECLARE_FUNCTION(execSwitchToNextWeaponDecrement); \
 	DECLARE_FUNCTION(execSwitchToNextWeaponIncrement);
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUEquipWeaponComponent(); \
 	friend struct Z_Construct_UClass_UEquipWeaponComponent_Statics; \
@@ -29,7 +29,7 @@ public: \
 	DECLARE_SERIALIZER(UEquipWeaponComponent)
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UEquipWeaponComponent(UEquipWeaponComponent&&); \
@@ -41,13 +41,13 @@ public: \
 	NO_API virtual ~UEquipWeaponComponent();
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_13_PROLOG
-#define FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_13_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,7 +55,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BLAMEGUN_API UClass* StaticClass<class UEquipWeaponComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_BlameGun_Source_BlameGun_Public_Character_EquipWeaponComponent_h
+#define CURRENT_FILE_ID FID_BlameGun_5_5_Source_BlameGun_Public_Character_EquipWeaponComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

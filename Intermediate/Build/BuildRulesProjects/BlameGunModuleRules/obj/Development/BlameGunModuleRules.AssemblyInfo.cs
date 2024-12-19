@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlameGunModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13956a11c5896be3015a56f4467561a5b5e1ee1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlameGunModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlameGunModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

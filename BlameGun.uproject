@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{1AD7BE7D-4B7A-CE8C-23DB-759F23A49ED8}",
+	"EngineAssociation": "{F788676D-4B2E-E680-1DFB-F09B968E548B}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -20,6 +20,14 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "PCG",
+			"Enabled": true
+		},
+		{
+			"Name": "PCGGeometryScriptInterop",
+			"Enabled": true
 		}
 	]
 }

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BlameGun/Public/Weapon/ProjectileSpawnerComponent.h"
+#include "BlameGun/Public/Weapon/Shared/ProjectileSpawnerComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeProjectileSpawnerComponent() {}
 
@@ -24,7 +24,7 @@ struct Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectile_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/Weapon/ProjectileSpawnerComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -71,19 +71,19 @@ struct Z_Construct_UClass_UProjectileSpawnerComponent_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/*\n * This class is responsible for holding onto the type of projectile that we will be spawning in for the gun\n * Can be accessed and changed during runtime or in the editor to determine the type of projectile that will be used\n */" },
 #endif
-		{ "IncludePath", "Weapon/ProjectileSpawnerComponent.h" },
-		{ "ModuleRelativePath", "Public/Weapon/ProjectileSpawnerComponent.h" },
+		{ "IncludePath", "Weapon/Shared/ProjectileSpawnerComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "* This class is responsible for holding onto the type of projectile that we will be spawning in for the gun\n* Can be accessed and changed during runtime or in the editor to determine the type of projectile that will be used" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileReference_MetaData[] = {
 		{ "Category", "ProjectileSpawnerComponent" },
-		{ "ModuleRelativePath", "Public/Weapon/ProjectileSpawnerComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileOffset_MetaData[] = {
 		{ "Category", "ProjectileSpawnerComponent" },
-		{ "ModuleRelativePath", "Public/Weapon/ProjectileSpawnerComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_ProjectileReference;
@@ -91,7 +91,7 @@ struct Z_Construct_UClass_UProjectileSpawnerComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectile, "SpawnProjectile" }, // 1623376209
+		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectile, "SpawnProjectile" }, // 2475105405
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -143,14 +143,14 @@ UProjectileSpawnerComponent::~UProjectileSpawnerComponent() {}
 // End Class UProjectileSpawnerComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UProjectileSpawnerComponent, UProjectileSpawnerComponent::StaticClass, TEXT("UProjectileSpawnerComponent"), &Z_Registration_Info_UClass_UProjectileSpawnerComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProjectileSpawnerComponent), 377467613U) },
+		{ Z_Construct_UClass_UProjectileSpawnerComponent, UProjectileSpawnerComponent::StaticClass, TEXT("UProjectileSpawnerComponent"), &Z_Registration_Info_UClass_UProjectileSpawnerComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProjectileSpawnerComponent), 1191052872U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_2231461509(TEXT("/Script/BlameGun"),
-	Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_3047952927(TEXT("/Script/BlameGun"),
+	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

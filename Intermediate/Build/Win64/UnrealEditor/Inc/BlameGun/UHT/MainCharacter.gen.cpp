@@ -101,14 +101,14 @@ AMainCharacter::~AMainCharacter() {}
 // End Class AMainCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_MainCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 4031032632U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 1343759378U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_MainCharacter_h_2329038504(TEXT("/Script/BlameGun"),
-	Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_MainCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_1128689061(TEXT("/Script/BlameGun"),
+	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

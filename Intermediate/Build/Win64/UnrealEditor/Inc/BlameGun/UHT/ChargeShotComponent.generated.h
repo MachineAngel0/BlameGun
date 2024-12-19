@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "Weapon/FireRate/ChargeShotComponent.h"
+// IWYU pragma: private, include "Weapon/Gun/FireRate/ChargeShotComponent.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -14,12 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BLAMEGUN_ChargeShotComponent_generated_h
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execEndCharge); \
 	DECLARE_FUNCTION(execStartCharge);
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUChargeShotComponent(); \
 	friend struct Z_Construct_UClass_UChargeShotComponent_Statics; \
@@ -28,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(UChargeShotComponent)
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UChargeShotComponent(UChargeShotComponent&&); \
@@ -40,13 +40,13 @@ public: \
 	NO_API virtual ~UChargeShotComponent();
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_14_PROLOG
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_14_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_18_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -54,7 +54,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BLAMEGUN_API UClass* StaticClass<class UChargeShotComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h
+#define CURRENT_FILE_ID FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

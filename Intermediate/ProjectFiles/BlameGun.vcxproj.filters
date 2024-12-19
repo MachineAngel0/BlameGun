@@ -41,9 +41,24 @@
     <ClCompile Include="..\..\Source\BlameGun\BlameGun.cpp">
       <Filter>Source\BlameGun</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\BlameGun\BlameGun.h">
+    <ClCompile Include="..\..\Source\BlameGun\BlameGun.h">
       <Filter>Source\BlameGun</Filter>
-    </ClInclude>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Enums_Structs">
+      <UniqueIdentifier>{B08F9874-522F-3687-96D7-8246FB440030}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Weapons.cpp">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Weapons.h">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Struct_Weapons.cpp">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Struct_Weapons.h">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
     <Filter Include="Source\BlameGun\Private">
       <UniqueIdentifier>{2043D5DC-6DF0-3261-A74F-975AB88E0F0B}</UniqueIdentifier>
     </Filter>
@@ -57,6 +72,9 @@
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\MainCharacter.cpp">
+      <Filter>Source\BlameGun\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SoundComponent.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Character">
@@ -74,13 +92,10 @@
     <Filter Include="Source\BlameGun\Private\Weapon">
       <UniqueIdentifier>{891253B5-6988-3FD3-AF0F-5C53CB4A8361}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\GunSoundComponent.cpp">
+      <Filter>Source\BlameGun\Private\Weapon</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Interface_Weapon.cpp">
-      <Filter>Source\BlameGun\Private\Weapon</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\ProjectileActor.cpp">
-      <Filter>Source\BlameGun\Private\Weapon</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\ProjectileSpawnerComponent.cpp">
       <Filter>Source\BlameGun\Private\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\WeaponBase.cpp">
@@ -89,74 +104,116 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\WeaponBaseComponent.cpp">
       <Filter>Source\BlameGun\Private\Weapon</Filter>
     </ClCompile>
-    <Filter Include="Source\BlameGun\Private\Weapon\FireRate">
-      <UniqueIdentifier>{4DF28361-BFF1-39FB-8297-6A39BE0C9F28}</UniqueIdentifier>
+    <Filter Include="Source\BlameGun\Private\Weapon\Gun">
+      <UniqueIdentifier>{206953B0-F1B1-3138-B1CA-DB0817611B91}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\FireRate\ChargeShotComponent.cpp">
-      <Filter>Source\BlameGun\Private\Weapon\FireRate</Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Gun\GunBase.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Gun</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\FireRate\FireRateComponent.cpp">
-      <Filter>Source\BlameGun\Private\Weapon\FireRate</Filter>
+    <Filter Include="Source\BlameGun\Private\Weapon\Gun\FireRate">
+      <UniqueIdentifier>{5CF09A57-486D-382F-B2D1-684733668111}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Gun\FireRate\ChargeShotComponent.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Gun\FireRate</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\FireRate\NormalShotComponent.cpp">
-      <Filter>Source\BlameGun\Private\Weapon\FireRate</Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Gun\FireRate\FireRateComponent.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Gun\FireRate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Gun\FireRate\NormalShotComponent.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Gun\FireRate</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Private\Weapon\Melee">
+      <UniqueIdentifier>{CBD858F1-DA54-3049-8AC1-A0CF17CF8920}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Melee\MeleeWeaponBase.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Melee</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Private\Weapon\Shared">
+      <UniqueIdentifier>{D3FB00F2-6C1E-3EA9-BDD9-201E144374F9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Shared\ProjectileActor.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\Shared\ProjectileSpawnerComponent.cpp">
+      <Filter>Source\BlameGun\Private\Weapon\Shared</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public">
       <UniqueIdentifier>{8AA20D4B-6826-3044-A7BD-D8D262EB0D67}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\BlameGun\Public\AsyncRootMovement.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\AsyncRootMovement.h">
       <Filter>Source\BlameGun\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\CharacterBase.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\CharacterBase.h">
       <Filter>Source\BlameGun\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\EnemyBase.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\EnemyBase.h">
       <Filter>Source\BlameGun\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\MainCharacter.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\MainCharacter.h">
       <Filter>Source\BlameGun\Public</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SoundComponent.h">
+      <Filter>Source\BlameGun\Public</Filter>
+    </ClCompile>
     <Filter Include="Source\BlameGun\Public\Character">
       <UniqueIdentifier>{918E7A4F-9842-39B5-9B2C-D5C1AC890629}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Character\EquipWeaponComponent.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\EquipWeaponComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
-    </ClInclude>
+    </ClCompile>
     <Filter Include="Source\BlameGun\Public\Weapon">
       <UniqueIdentifier>{431122EF-5032-3B82-A873-55EED630FA3D}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\Interface_Weapon.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\GunSoundComponent.h">
       <Filter>Source\BlameGun\Public\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\ProjectileActor.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Interface_Weapon.h">
       <Filter>Source\BlameGun\Public\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\ProjectileSpawnerComponent.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\WeaponBase.h">
       <Filter>Source\BlameGun\Public\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\WeaponBase.h">
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\WeaponBaseComponent.h">
       <Filter>Source\BlameGun\Public\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\WeaponBaseComponent.h">
-      <Filter>Source\BlameGun\Public\Weapon</Filter>
-    </ClInclude>
-    <Filter Include="Source\BlameGun\Public\Weapon\FireRate">
-      <UniqueIdentifier>{2AC9E6A9-6E90-3F15-8A04-56C68C29BE79}</UniqueIdentifier>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Weapon\Gun">
+      <UniqueIdentifier>{6260E1AA-AF07-3BBF-9919-91C5693A247D}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\FireRate\ChargeShotComponent.h">
-      <Filter>Source\BlameGun\Public\Weapon\FireRate</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\FireRate\FireRateComponent.h">
-      <Filter>Source\BlameGun\Public\Weapon\FireRate</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Weapon\FireRate\NormalShotComponent.h">
-      <Filter>Source\BlameGun\Public\Weapon\FireRate</Filter>
-    </ClInclude>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Gun\GunBase.h">
+      <Filter>Source\BlameGun\Public\Weapon\Gun</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Weapon\Gun\FireRate">
+      <UniqueIdentifier>{8388BE4C-91FA-3267-BD3A-8761D66903CC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Gun\FireRate\ChargeShotComponent.h">
+      <Filter>Source\BlameGun\Public\Weapon\Gun\FireRate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Gun\FireRate\FireRateComponent.h">
+      <Filter>Source\BlameGun\Public\Weapon\Gun\FireRate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Gun\FireRate\NormalShotComponent.h">
+      <Filter>Source\BlameGun\Public\Weapon\Gun\FireRate</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Weapon\Melee">
+      <UniqueIdentifier>{377A827E-49AE-3F34-930E-8F08186F0C59}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Melee\MeleeWeaponBase.h">
+      <Filter>Source\BlameGun\Public\Weapon\Melee</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Weapon\Shared">
+      <UniqueIdentifier>{FEA0326E-CDDC-383F-836E-E5F527849C07}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Shared\ProjectileActor.h">
+      <Filter>Source\BlameGun\Public\Weapon\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Shared\ProjectileSpawnerComponent.h">
+      <Filter>Source\BlameGun\Public\Weapon\Shared</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

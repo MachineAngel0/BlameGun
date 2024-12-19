@@ -28,7 +28,5 @@ public:
 	
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	AWeaponBase* RequestWeapon();
-
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
-	UProjectileSpawnerComponent* RequestProjectileComponent();
+	
 };

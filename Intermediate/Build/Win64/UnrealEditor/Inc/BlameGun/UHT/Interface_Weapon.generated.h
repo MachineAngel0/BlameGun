@@ -10,21 +10,18 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AWeaponBase;
-class UProjectileSpawnerComponent;
 #ifdef BLAMEGUN_Interface_Weapon_generated_h
 #error "Interface_Weapon.generated.h already included, missing '#pragma once' in Interface_Weapon.h"
 #endif
 #define BLAMEGUN_Interface_Weapon_generated_h
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual UProjectileSpawnerComponent* RequestProjectileComponent_Implementation() { return NULL; }; \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual AWeaponBase* RequestWeapon_Implementation() { return NULL; }; \
-	DECLARE_FUNCTION(execRequestProjectileComponent); \
 	DECLARE_FUNCTION(execRequestWeapon);
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_CALLBACK_WRAPPERS
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_CALLBACK_WRAPPERS
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	BLAMEGUN_API UInterface_Weapon(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -38,7 +35,7 @@ public: \
 	BLAMEGUN_API virtual ~UInterface_Weapon();
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_GENERATED_UINTERFACE_BODY() \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_GENERATED_UINTERFACE_BODY() \
 private: \
 	static void StaticRegisterNativesUInterface_Weapon(); \
 	friend struct Z_Construct_UClass_UInterface_Weapon_Statics; \
@@ -47,32 +44,31 @@ public: \
 	DECLARE_SERIALIZER(UInterface_Weapon)
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_GENERATED_BODY \
 	PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_GENERATED_UINTERFACE_BODY() \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_GENERATED_UINTERFACE_BODY() \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_INCLASS_IINTERFACE_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_INCLASS_IINTERFACE_NO_PURE_DECLS \
 protected: \
 	virtual ~IInterface_Weapon() {} \
 public: \
 	typedef UInterface_Weapon UClassType; \
 	typedef IInterface_Weapon ThisClass; \
-	static UProjectileSpawnerComponent* Execute_RequestProjectileComponent(UObject* O); \
 	static AWeaponBase* Execute_RequestWeapon(UObject* O); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_13_PROLOG
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_24_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_13_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_24_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_CALLBACK_WRAPPERS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_INCLASS_IINTERFACE_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_CALLBACK_WRAPPERS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h_16_INCLASS_IINTERFACE_NO_PURE_DECLS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -80,7 +76,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BLAMEGUN_API UClass* StaticClass<class UInterface_Weapon>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_BlameGun_Source_BlameGun_Public_Weapon_Interface_Weapon_h
+#define CURRENT_FILE_ID FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Interface_Weapon_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

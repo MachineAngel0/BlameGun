@@ -15,26 +15,13 @@ class USkeletalMeshComponent;
 #endif
 #define BLAMEGUN_WeaponBase_generated_h
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_11_DELEGATE \
-BLAMEGUN_API void FOnStartWeaponAttack_DelegateWrapper(const FMulticastScriptDelegate& OnStartWeaponAttack);
-
-
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_12_DELEGATE \
-BLAMEGUN_API void FOnPerformWeaponAttack_DelegateWrapper(const FMulticastScriptDelegate& OnPerformWeaponAttack);
-
-
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_13_DELEGATE \
-BLAMEGUN_API void FOnEndWeaponAttack_DelegateWrapper(const FMulticastScriptDelegate& OnEndWeaponAttack);
-
-
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execEndWeaponAttack); \
-	DECLARE_FUNCTION(execPerformWeaponAttack); \
 	DECLARE_FUNCTION(execStartWeaponAttack); \
 	DECLARE_FUNCTION(execGetWeaponSkeletalMesh);
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeaponBase(); \
 	friend struct Z_Construct_UClass_AWeaponBase_Statics; \
@@ -44,7 +31,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AWeaponBase*>(this); }
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AWeaponBase(AWeaponBase&&); \
@@ -56,13 +43,13 @@ public: \
 	NO_API virtual ~AWeaponBase();
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_15_PROLOG
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_16_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h_18_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -70,7 +57,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BLAMEGUN_API UClass* StaticClass<class AWeaponBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_BlameGun_Source_BlameGun_Public_Weapon_WeaponBase_h
+#define CURRENT_FILE_ID FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

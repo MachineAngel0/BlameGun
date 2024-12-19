@@ -1,11 +1,13 @@
-"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Private\Weapon\ProjectileSpawnerComponent.cpp"
-/FI"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
-/FI"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\Definitions.BlameGun.h"
-/Yu"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h"
-/Fp"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.pch"
-/Fo"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.cpp.obj"
-/sourceDependencies "C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.cpp.dep.json"
-@"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\BlameGun.Shared.rsp"
+"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Private\Weapon\Shared\ProjectileSpawnerComponent.cpp"
+/FI"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h"
+/FI"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\Definitions.BlameGun.h"
+/Yu"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h"
+/Fp"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h.pch"
+/Fo"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.cpp.obj"
+/experimental:log "C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.cpp.sarif"
+/sourceDependencies "C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\ProjectileSpawnerComponent.cpp.dep.json"
+@"C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Intermediate\Build\Win64\x64\UnrealEditor\Development\BlameGun\BlameGun.Shared.rsp"
+/d2ssa-cfg-question-
 /Zc:inline
 /nologo
 /Oi

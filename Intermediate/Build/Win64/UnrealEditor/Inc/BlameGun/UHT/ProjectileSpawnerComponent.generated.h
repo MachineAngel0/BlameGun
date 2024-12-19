@@ -4,7 +4,7 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-// IWYU pragma: private, include "Weapon/ProjectileSpawnerComponent.h"
+// IWYU pragma: private, include "Weapon/Shared/ProjectileSpawnerComponent.h"
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
@@ -14,11 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BLAMEGUN_ProjectileSpawnerComponent_generated_h
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSpawnProjectile);
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUProjectileSpawnerComponent(); \
 	friend struct Z_Construct_UClass_UProjectileSpawnerComponent_Statics; \
@@ -27,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(UProjectileSpawnerComponent)
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UProjectileSpawnerComponent(UProjectileSpawnerComponent&&); \
@@ -39,13 +39,13 @@ public: \
 	NO_API virtual ~UProjectileSpawnerComponent();
 
 
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_18_PROLOG
-#define FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_19_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h_21_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -53,7 +53,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> BLAMEGUN_API UClass* StaticClass<class UProjectileSpawnerComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_BlameGun_Source_BlameGun_Public_Weapon_ProjectileSpawnerComponent_h
+#define CURRENT_FILE_ID FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

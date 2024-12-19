@@ -38,13 +38,10 @@ void UWeaponBaseComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 void UWeaponBaseComponent::InitializeWeaponOwner()
 {
 	WeaponOwner = IInterface_Weapon::Execute_RequestWeapon(GetOwner());
-	/* TODO: log this later
-	if (WeaponOwner)
+	if (!WeaponOwner)
 	{
-		
+		UE_LOG(LogTemp, Error, TEXT("Invalid weapon owner"));
 	}
-	*/	
-	//maybe this would flip something off on the weapon like a bool that says, perform weapon attack on weapon start?
 }
 
 

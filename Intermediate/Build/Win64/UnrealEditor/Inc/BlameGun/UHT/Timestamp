@@ -1,15 +1,21 @@
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\AsyncRootMovement.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Character\Interface_Character.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Character\EquipWeaponComponent.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Character\SprintComponent.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\ProjectileActor.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\WeaponBaseComponent.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\WeaponBase.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\MainCharacter.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\ProjectileSpawnerComponent.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\Interface_Weapon.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\EnemyBase.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\CharacterBase.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\FireRate\ChargeShotComponent.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\FireRate\NormalShotComponent.h
-C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun\Source\BlameGun\Public\Weapon\FireRate\FireRateComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\CharacterBase.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\MainCharacter.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Character\EquipWeaponComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\GunSoundComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Character\SprintComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\WeaponBase.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Interface_Weapon.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Gun\FireRate\ChargeShotComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\WeaponBaseComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Melee\MeleeWeaponBase.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Gun\FireRate\NormalShotComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Gun\FireRate\FireRateComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Shared\ProjectileActor.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\EnemyBase.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Shared\ProjectileSpawnerComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\SoundComponent.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\AsyncRootMovement.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Character\Interface_Character.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Public\Weapon\Gun\GunBase.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Enums_Structs\Enum_Weapons.h
+C:\Users\Adams Humbert\Documents\Unreal Projects\BlameGun 5.5\Source\BlameGun\Enums_Structs\Struct_Weapons.h

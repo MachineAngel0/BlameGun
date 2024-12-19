@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BlameGun/Public/Weapon/FireRate/ChargeShotComponent.h"
+#include "BlameGun/Public/Weapon/Gun/FireRate/ChargeShotComponent.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeChargeShotComponent() {}
 
@@ -23,7 +23,7 @@ struct Z_Construct_UFunction_UChargeShotComponent_EndCharge_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -52,7 +52,7 @@ struct Z_Construct_UFunction_UChargeShotComponent_StartCharge_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -97,15 +97,15 @@ struct Z_Construct_UClass_UChargeShotComponent_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
 		{ "ClassGroupNames", "Custom" },
-		{ "IncludePath", "Weapon/FireRate/ChargeShotComponent.h" },
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "IncludePath", "Weapon/Gun/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChargeUpDuration_MetaData[] = {
 		{ "Category", "ChargeShotComponent" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "//when we are allowed to fire our weapon\n" },
 #endif
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "when we are allowed to fire our weapon" },
 #endif
@@ -115,7 +115,7 @@ struct Z_Construct_UClass_UChargeShotComponent_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// how fast current charge up time, charges\n" },
 #endif
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "how fast current charge up time, charges" },
 #endif
@@ -125,45 +125,35 @@ struct Z_Construct_UClass_UChargeShotComponent_Statics
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "// our timer which gets added to and reset\n" },
 #endif
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "our timer which gets added to and reset" },
 #endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AudioComponent_MetaData[] = {
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireAudioComponent_MetaData[] = {
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChargeUpSound_MetaData[] = {
 		{ "Category", "ChargeShotComponent" },
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CanceledChargeSound_MetaData[] = {
 		{ "Category", "ChargeShotComponent" },
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[] = {
-		{ "Category", "ChargeShotComponent" },
-		{ "ModuleRelativePath", "Public/Weapon/FireRate/ChargeShotComponent.h" },
+		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/ChargeShotComponent.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ChargeUpDuration;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ChargeRate;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CurrentChargeUpTime;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioComponent;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_FireAudioComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChargeUpSound;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CanceledChargeSound;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_FireSound;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UChargeShotComponent_EndCharge, "EndCharge" }, // 1737288313
-		{ &Z_Construct_UFunction_UChargeShotComponent_StartCharge, "StartCharge" }, // 2411870143
+		{ &Z_Construct_UFunction_UChargeShotComponent_EndCharge, "EndCharge" }, // 3875797591
+		{ &Z_Construct_UFunction_UChargeShotComponent_StartCharge, "StartCharge" }, // 1811014599
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -175,19 +165,15 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UChargeShotComp
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_ChargeRate = { "ChargeRate", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, ChargeRate), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChargeRate_MetaData), NewProp_ChargeRate_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_CurrentChargeUpTime = { "CurrentChargeUpTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, CurrentChargeUpTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentChargeUpTime_MetaData), NewProp_CurrentChargeUpTime_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_AudioComponent = { "AudioComponent", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, AudioComponent), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AudioComponent_MetaData), NewProp_AudioComponent_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_FireAudioComponent = { "FireAudioComponent", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, FireAudioComponent), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FireAudioComponent_MetaData), NewProp_FireAudioComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_ChargeUpSound = { "ChargeUpSound", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, ChargeUpSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChargeUpSound_MetaData), NewProp_ChargeUpSound_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_CanceledChargeSound = { "CanceledChargeSound", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, CanceledChargeSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CanceledChargeSound_MetaData), NewProp_CanceledChargeSound_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChargeShotComponent, FireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FireSound_MetaData), NewProp_FireSound_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UChargeShotComponent_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_ChargeUpDuration,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_ChargeRate,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_CurrentChargeUpTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_AudioComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_FireAudioComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_ChargeUpSound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_CanceledChargeSound,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChargeShotComponent_Statics::NewProp_FireSound,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UChargeShotComponent_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UChargeShotComponent_Statics::DependentSingletons[])() = {
@@ -227,14 +213,14 @@ UChargeShotComponent::~UChargeShotComponent() {}
 // End Class UChargeShotComponent
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_Statics
+struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UChargeShotComponent, UChargeShotComponent::StaticClass, TEXT("UChargeShotComponent"), &Z_Registration_Info_UClass_UChargeShotComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UChargeShotComponent), 3454543119U) },
+		{ Z_Construct_UClass_UChargeShotComponent, UChargeShotComponent::StaticClass, TEXT("UChargeShotComponent"), &Z_Registration_Info_UClass_UChargeShotComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UChargeShotComponent), 1996757988U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_2008756491(TEXT("/Script/BlameGun"),
-	Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_Source_BlameGun_Public_Weapon_FireRate_ChargeShotComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_164357768(TEXT("/Script/BlameGun"),
+	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_ChargeShotComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
