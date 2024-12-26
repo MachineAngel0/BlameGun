@@ -7,6 +7,8 @@
 
 #include "Interface_Character.generated.h"
 
+enum class EMainCharacterAnimState : uint8;
+class UCameraComponent;
 class ACharacterBase;
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
@@ -27,7 +29,13 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	ACharacterBase* RequestCharacter();
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	UCameraComponent* RequestCamera();
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void SetAnimState();
+	void SetMainCharacterAnimState(EMainCharacterAnimState AnimationState);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void PlayCharacterAnimationMontage(UAnimMontage* AnimMontage);
 };

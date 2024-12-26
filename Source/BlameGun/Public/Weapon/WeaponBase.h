@@ -6,6 +6,7 @@
 #include "BlameGun/Enums_Structs/Enum_Weapons.h"
 #include "GameFramework/Actor.h"
 #include "Interface_Weapon.h"
+#include "BlameGun/Enums_Structs/Enum_Character.h"
 #include "WeaponBase.generated.h"
 
 enum class EWeaponBaseType : uint8;
@@ -25,6 +26,8 @@ public:
 
 	virtual AWeaponBase* RequestWeapon_Implementation() override;
 
+	
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent* WeaponSkeletalMesh;
 	UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -33,6 +36,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName EquipSocket = "GripPoint";
 
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EAttachmentRule AttachmentLocationRule = EAttachmentRule::SnapToTarget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EAttachmentRule AttachmentRotationRule = EAttachmentRule::SnapToTarget;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EAttachmentRule AttachmentScaleRule = EAttachmentRule::KeepWorld;
+	bool ShouldWeldBodies = false;
+	FAttachmentTransformRules AttachRules = {AttachmentLocationRule, AttachmentRotationRule, AttachmentScaleRule, ShouldWeldBodies}; 
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName ProjectileSocket = "Ammo";
 	//TODO: AnimStateToSetTo, when i get the model in the game
@@ -56,6 +69,12 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual void EndWeaponAttack();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FVector InitialScale = {1,1,1};
+	UFUNCTION()
+	void SetScaleOnAttach();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EMainCharacterAnimState SetCharacterAnimationStateTo = EMainCharacterAnimState::ECS_None;
 	
 };

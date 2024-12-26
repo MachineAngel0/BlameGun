@@ -3,6 +3,9 @@
 
 #include "Weapon/Gun/GunBase.h"
 
+#include "CharacterBase.h"
+#include "Character/Interface_Character.h"
+#include "Kismet/GameplayStatics.h"
 #include "Weapon/GunSoundComponent.h"
 #include "Weapon/Gun/FireRate/FireRateComponent.h"
 #include "Weapon/Shared/ProjectileSpawnerComponent.h"
@@ -76,6 +79,10 @@ void AGunBase::StartWeaponAttack()
 		//play Firing Sound Audio and spawn projectile
 		GunSoundComponent->StopFireSound();
 		GunSoundComponent->PlayFireSound();
+		ACharacterBase* PlayerCharacter = IInterface_Character::Execute_RequestCharacter(UGameplayStatics::GetPlayerCharacter(GetWorld(),0));
+		UE_LOG(LogTemp, Warning, TEXT("Hello %s"), *PlayerCharacter->GetName());
+		PlayerCharacter->PlayCharacterAnimationMontage_Implementation(AttackMontage);
+		
 		ProjectileSpawnerComponent->SpawnProjectile();
 	}
 	

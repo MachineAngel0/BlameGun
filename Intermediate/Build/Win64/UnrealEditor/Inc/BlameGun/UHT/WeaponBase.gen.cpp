@@ -13,9 +13,12 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase();
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Weapon_NoRegister();
+BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EMainCharacterAnimState();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EWeaponBaseType();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
+ENGINE_API UEnum* Z_Construct_UEnum_Engine_EAttachmentRule();
 UPackage* Z_Construct_UPackage__Script_BlameGun();
 // End Cross Module References
 
@@ -92,6 +95,35 @@ DEFINE_FUNCTION(AWeaponBase::execGetWeaponSkeletalMesh)
 }
 // End Class AWeaponBase Function GetWeaponSkeletalMesh
 
+// Begin Class AWeaponBase Function SetScaleOnAttach
+struct Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AWeaponBase, nullptr, "SetScaleOnAttach", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AWeaponBase::execSetScaleOnAttach)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetScaleOnAttach();
+	P_NATIVE_END;
+}
+// End Class AWeaponBase Function SetScaleOnAttach
+
 // Begin Class AWeaponBase Function StartWeaponAttack
 struct Z_Construct_UFunction_AWeaponBase_StartWeaponAttack_Statics
 {
@@ -128,6 +160,7 @@ void AWeaponBase::StaticRegisterNativesAWeaponBase()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "EndWeaponAttack", &AWeaponBase::execEndWeaponAttack },
 		{ "GetWeaponSkeletalMesh", &AWeaponBase::execGetWeaponSkeletalMesh },
+		{ "SetScaleOnAttach", &AWeaponBase::execSetScaleOnAttach },
 		{ "StartWeaponAttack", &AWeaponBase::execStartWeaponAttack },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -153,6 +186,18 @@ struct Z_Construct_UClass_AWeaponBase_Statics
 		{ "Category", "WeaponBase" },
 		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttachmentLocationRule_MetaData[] = {
+		{ "Category", "WeaponBase" },
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttachmentRotationRule_MetaData[] = {
+		{ "Category", "WeaponBase" },
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttachmentScaleRule_MetaData[] = {
+		{ "Category", "WeaponBase" },
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileSocket_MetaData[] = {
 		{ "Category", "WeaponBase" },
 		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
@@ -160,17 +205,35 @@ struct Z_Construct_UClass_AWeaponBase_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponBaseType_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InitialScale_MetaData[] = {
+		{ "Category", "WeaponBase" },
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SetCharacterAnimationStateTo_MetaData[] = {
+		{ "Category", "WeaponBase" },
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponSkeletalMesh;
 	static const UECodeGen_Private::FNamePropertyParams NewProp_EquipSocket;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_AttachmentLocationRule_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_AttachmentLocationRule;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_AttachmentRotationRule_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_AttachmentRotationRule;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_AttachmentScaleRule_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_AttachmentScaleRule;
 	static const UECodeGen_Private::FNamePropertyParams NewProp_ProjectileSocket;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_WeaponBaseType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_WeaponBaseType;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_InitialScale;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_SetCharacterAnimationStateTo_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_SetCharacterAnimationStateTo;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AWeaponBase_EndWeaponAttack, "EndWeaponAttack" }, // 3387915383
 		{ &Z_Construct_UFunction_AWeaponBase_GetWeaponSkeletalMesh, "GetWeaponSkeletalMesh" }, // 1458484567
+		{ &Z_Construct_UFunction_AWeaponBase_SetScaleOnAttach, "SetScaleOnAttach" }, // 2171395746
 		{ &Z_Construct_UFunction_AWeaponBase_StartWeaponAttack, "StartWeaponAttack" }, // 2149714106
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -182,15 +245,33 @@ struct Z_Construct_UClass_AWeaponBase_Statics
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponSkeletalMesh = { "WeaponSkeletalMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, WeaponSkeletalMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponSkeletalMesh_MetaData), NewProp_WeaponSkeletalMesh_MetaData) };
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_EquipSocket = { "EquipSocket", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, EquipSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EquipSocket_MetaData), NewProp_EquipSocket_MetaData) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentLocationRule_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentLocationRule = { "AttachmentLocationRule", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, AttachmentLocationRule), Z_Construct_UEnum_Engine_EAttachmentRule, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachmentLocationRule_MetaData), NewProp_AttachmentLocationRule_MetaData) }; // 366982490
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentRotationRule_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentRotationRule = { "AttachmentRotationRule", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, AttachmentRotationRule), Z_Construct_UEnum_Engine_EAttachmentRule, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachmentRotationRule_MetaData), NewProp_AttachmentRotationRule_MetaData) }; // 366982490
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentScaleRule_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentScaleRule = { "AttachmentScaleRule", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, AttachmentScaleRule), Z_Construct_UEnum_Engine_EAttachmentRule, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttachmentScaleRule_MetaData), NewProp_AttachmentScaleRule_MetaData) }; // 366982490
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_ProjectileSocket = { "ProjectileSocket", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, ProjectileSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileSocket_MetaData), NewProp_ProjectileSocket_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponBaseType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponBaseType = { "WeaponBaseType", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, WeaponBaseType), Z_Construct_UEnum_BlameGun_EWeaponBaseType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponBaseType_MetaData), NewProp_WeaponBaseType_MetaData) }; // 3504306766
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_InitialScale = { "InitialScale", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, InitialScale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InitialScale_MetaData), NewProp_InitialScale_MetaData) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_SetCharacterAnimationStateTo_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_SetCharacterAnimationStateTo = { "SetCharacterAnimationStateTo", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, SetCharacterAnimationStateTo), Z_Construct_UEnum_BlameGun_EMainCharacterAnimState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SetCharacterAnimationStateTo_MetaData), NewProp_SetCharacterAnimationStateTo_MetaData) }; // 3551852300
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeaponBase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponSkeletalMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_EquipSocket,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentLocationRule_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentLocationRule,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentRotationRule_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentRotationRule,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentScaleRule_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentScaleRule,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_ProjectileSocket,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponBaseType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponBaseType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_InitialScale,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_SetCharacterAnimationStateTo_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_SetCharacterAnimationStateTo,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AWeaponBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AWeaponBase_Statics::DependentSingletons[])() = {
@@ -236,10 +317,10 @@ AWeaponBase::~AWeaponBase() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWeaponBase, AWeaponBase::StaticClass, TEXT("AWeaponBase"), &Z_Registration_Info_UClass_AWeaponBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeaponBase), 603384909U) },
+		{ Z_Construct_UClass_AWeaponBase, AWeaponBase::StaticClass, TEXT("AWeaponBase"), &Z_Registration_Info_UClass_AWeaponBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeaponBase), 535009247U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_3647881422(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_3121664815(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

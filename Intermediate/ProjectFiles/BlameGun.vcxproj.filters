@@ -47,6 +47,12 @@
     <Filter Include="Source\BlameGun\Enums_Structs">
       <UniqueIdentifier>{B08F9874-522F-3687-96D7-8246FB440030}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Character.cpp">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Character.h">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Weapons.cpp">
       <Filter>Source\BlameGun\Enums_Structs</Filter>
     </ClCompile>
@@ -71,10 +77,16 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\EnemyBase.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Interface_Damage.cpp">
+      <Filter>Source\BlameGun\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\MainCharacter.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\SoundComponent.cpp">
+      <Filter>Source\BlameGun\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\VFXSpawnerComponent.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Character">
@@ -86,8 +98,17 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\Interface_Character.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Character\Inventory.cpp">
+      <Filter>Source\BlameGun\Private\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\SprintComponent.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Private\Items">
+      <UniqueIdentifier>{EA29A24A-A03F-348E-BC6E-5B851D5855BA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Items\ItemBase.cpp">
+      <Filter>Source\BlameGun\Private\Items</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Weapon">
       <UniqueIdentifier>{891253B5-6988-3FD3-AF0F-5C53CB4A8361}</UniqueIdentifier>
@@ -149,10 +170,16 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\EnemyBase.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Interface_Damage.h">
+      <Filter>Source\BlameGun\Public</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\MainCharacter.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\SoundComponent.h">
+      <Filter>Source\BlameGun\Public</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\VFXSpawnerComponent.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\Character">
@@ -164,8 +191,17 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\Inventory.h">
+      <Filter>Source\BlameGun\Public\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Items">
+      <UniqueIdentifier>{C909754A-37E9-3CE2-AC36-44DDF49B47FC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Items\ItemBase.h">
+      <Filter>Source\BlameGun\Public\Items</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\Weapon">
       <UniqueIdentifier>{431122EF-5032-3B82-A873-55EED630FA3D}</UniqueIdentifier>

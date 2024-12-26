@@ -73,7 +73,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USoundBase* CanceledChargeSound = nullptr;
-	void PlayCanceledChargeSound();
+	
 	
 
 	

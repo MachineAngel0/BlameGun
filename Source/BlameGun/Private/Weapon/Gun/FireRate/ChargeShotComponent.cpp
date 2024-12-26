@@ -93,13 +93,8 @@ void UChargeShotComponent::ResetFireRate()
 
 void UChargeShotComponent::EndCharge()
 {
-	// check if we are canceling the attack
-	//TODO: maybe a small delay after the gun had just fired
-	if(CurrentChargeUpTime < ChargeUpDuration)
-	{
-		StopAudioComponent();
-		PlayCanceledChargeSound();
-	}
+
+	StopAudioComponent();
 	ChargeShot = false;
 	CurrentChargeUpTime = 0.0f;
 	
@@ -120,15 +115,6 @@ void UChargeShotComponent::StopAudioComponent()
 		AudioComponent->Stop();
 	}
 }
-
-void UChargeShotComponent::PlayCanceledChargeSound()
-{
-	if (!ChargeUpSound) return;
-	StopAudioComponent();
-	AudioComponent = UGameplayStatics::SpawnSound2D(GetWorld(), CanceledChargeSound);
-}
-
-
 
 
 

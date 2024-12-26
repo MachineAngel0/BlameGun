@@ -39,8 +39,10 @@ void UEquipWeaponComponent::BeginPlay()
 	{
 		CurrentWeapon = WeaponWheel[0];
 		CurrentWeapon->SetActorHiddenInGame(false);
-		CurrentWeapon->AttachToComponent(CharacterOwner->GetCharacterMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, CurrentWeapon->EquipSocket);
-		IInterface_Character::Execute_SetAnimState(GetOwner());
+		//CurrentWeapon->WeaponSkeletalMesh->AttachToComponent(CharacterOwner->GetCharacterMesh(), CurrentWeapon->AttachRules, CurrentWeapon->EquipSocket);
+		CurrentWeapon->AttachToComponent(CharacterOwner->GetCharacterMesh(), CurrentWeapon->AttachRules, CurrentWeapon->EquipSocket);
+		IInterface_Character::Execute_SetMainCharacterAnimState(GetOwner(), CurrentWeapon->SetCharacterAnimationStateTo);
+		CurrentWeapon->SetScaleOnAttach();
 		
 	}
 	
@@ -92,8 +94,10 @@ void UEquipWeaponComponent::SwitchToWeaponNumber(const int WeaponNumber)
 		//set the new weapon
 		CurrentWeapon = WeaponWheel[WeaponNumber];
 		CurrentWeapon->SetActorHiddenInGame(false);
-		CurrentWeapon->AttachToComponent(CharacterOwner->GetCharacterMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, CurrentWeapon->EquipSocket);
-		IInterface_Character::Execute_SetAnimState(GetOwner());
+		//CurrentWeapon->WeaponSkeletalMesh->AttachToComponent(CharacterOwner->GetCharacterMesh(), CurrentWeapon->AttachRules, CurrentWeapon->EquipSocket);
+		CurrentWeapon->AttachToComponent(CharacterOwner->GetCharacterMesh(), CurrentWeapon->AttachRules, CurrentWeapon->EquipSocket);
+		IInterface_Character::Execute_SetMainCharacterAnimState(GetOwner(), CurrentWeapon->SetCharacterAnimationStateTo);
+		CurrentWeapon->SetScaleOnAttach();
 	}
 	else
 	{

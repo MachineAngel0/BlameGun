@@ -4,6 +4,7 @@
 #include "Character/SprintComponent.h"
 
 #include "CharacterBase.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 // Sets default values for this component's properties
@@ -21,7 +22,7 @@ USprintComponent::USprintComponent()
 void USprintComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
+	CharacterOwner = IInterface_Character::Execute_RequestCharacter(GetOwner());
 	
 	
 }
@@ -34,4 +35,15 @@ void USprintComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 
 	// ...
 }
+
+void USprintComponent::StartSprint(float SprintSpeed)
+{
+	CharacterOwner->GetCharacterMovement()->MaxWalkSpeed = SprintSpeed;
+}
+
+void USprintComponent::EndSprint(float WalkSpeed)
+{
+	CharacterOwner->GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+}
+
 

@@ -20,3 +20,8 @@ void AMainCharacter::BeginPlay()
 
 
 }
+
+void AMainCharacter::SetMainCharacterAnimState_Implementation(EMainCharacterAnimState AnimationState)
+{
+	CharacterAnimationState = AnimationState;
+}

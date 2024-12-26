@@ -35,6 +35,10 @@ public:
 	virtual void StartWeaponAttack() override;
 	virtual void EndWeaponAttack() override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAnimMontage* AttackMontage = nullptr;
+
+	
 	
 	
 };

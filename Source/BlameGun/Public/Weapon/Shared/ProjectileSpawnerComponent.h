@@ -16,7 +16,7 @@ class AProjectileActor;
  * Can be accessed and changed during runtime or in the editor to determine the type of projectile that will be used
  */
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable )
 class BLAMEGUN_API UProjectileSpawnerComponent : public UWeaponBaseComponent
 {
 	GENERATED_BODY()
@@ -39,7 +39,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	virtual void SpawnProjectile();
-	
+
+	UFUNCTION(Blueprintable, BlueprintImplementableEvent)
+	FTransform DoLineTrace();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector ProjectileOffset = FVector(100, 0, -10);

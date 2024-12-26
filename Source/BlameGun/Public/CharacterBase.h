@@ -19,10 +19,11 @@ public:
 	ACharacterBase();
 
 	virtual ACharacterBase* RequestCharacter_Implementation() override;
+	virtual void PlayCharacterAnimationMontage_Implementation(UAnimMontage* AnimMontage) override;
 
 	
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	USkeletalMeshComponent* GetCharacterMesh();
+	USkeletalMeshComponent* GetCharacterMesh() const;
 	
 protected:
 	// Called when the game starts or when spawned

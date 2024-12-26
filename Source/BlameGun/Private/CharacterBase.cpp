@@ -20,7 +20,18 @@ ACharacterBase* ACharacterBase::RequestCharacter_Implementation()
 	return this;
 }
 
-USkeletalMeshComponent* ACharacterBase::GetCharacterMesh()
+void ACharacterBase::PlayCharacterAnimationMontage_Implementation(UAnimMontage* AnimMontage)
+{
+	if (!AnimMontage)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Invalid Anim Montage Played on character"));
+		return;
+	}
+		
+	CharacterSkeletalMeshComponent->GetAnimInstance()->Montage_Play(AnimMontage);
+}
+
+USkeletalMeshComponent* ACharacterBase::GetCharacterMesh() const
 {
 	//return FindComponentByClass<USkeletalMeshComponent>();
 	return CharacterSkeletalMeshComponent;

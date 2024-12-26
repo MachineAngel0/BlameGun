@@ -4,6 +4,7 @@
 #include "Weapon/Shared/ProjectileSpawnerComponent.h"
 
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "Weapon/WeaponBase.h"
 #include "Weapon/Shared/ProjectileActor.h"
 
@@ -35,8 +36,28 @@ void UProjectileSpawnerComponent::TickComponent(float DeltaTime, ELevelTick Tick
 	// ...
 }
 
+
+
 void UProjectileSpawnerComponent::SpawnProjectile()
 {
+
+	UE_LOG(LogTemp, Warning, TEXT("SpawnProjectileCalled"));
+
+	if (!GetWorld())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Invalid World"));
+	}
+	if (!ProjectileReference)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Invalid ProjectileReference"));
+	}
+	
+	GetWorld()->SpawnActor<AProjectileActor>(ProjectileReference, DoLineTrace());
+	
+	
+
+
+	/*
 	UE_LOG(LogTemp, Warning, TEXT("SpawnProjectileCalled"));
 
 	WeaponOwner->ProjectileSocket;
@@ -62,7 +83,6 @@ void UProjectileSpawnerComponent::SpawnProjectile()
 	
 	GetWorld()->SpawnActor<AProjectileActor>(ProjectileReference, SpawnTransform);
 	
-	
-	
+	*/
 }
 

@@ -7,9 +7,10 @@ AWeaponBase::AWeaponBase()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
 	WeaponSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>("SkeletalMeshComponent");
-	
+	AttachRules = {AttachmentLocationRule, AttachmentRotationRule, AttachmentScaleRule, ShouldWeldBodies};
+
+	WeaponSkeletalMesh->FirstPersonPrimitiveType = EFirstPersonPrimitiveType::FirstPerson;
 }
 
 // Called when the game starts or when spawned
@@ -34,6 +35,12 @@ void AWeaponBase::StartWeaponAttack()
 void AWeaponBase::EndWeaponAttack()
 {
 	
+}
+
+void AWeaponBase::SetScaleOnAttach()
+{
+	this->SetActorRelativeScale3D(InitialScale);
+	this->SetActorScale3D(InitialScale);
 }
 
 AWeaponBase* AWeaponBase::RequestWeapon_Implementation()

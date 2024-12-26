@@ -7,6 +7,8 @@
 #include "SprintComponent.generated.h"
 
 
+class ACharacterBase;
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BLAMEGUN_API USprintComponent : public UActorComponent
 {
@@ -23,7 +25,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	ACharacterBase* CharacterOwner = nullptr;
+
 	
-		
-	
+	UFUNCTION(BlueprintCallable)
+	void StartSprint(float SprintSpeed = 1000.0f);
+	UFUNCTION(BlueprintCallable)
+	void EndSprint(float WalkSpeed = 600.0f);
 };

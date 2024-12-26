@@ -4,8 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "CharacterBase.h"
+#include "BlameGun/Enums_Structs/Enum_Character.h"
 #include "MainCharacter.generated.h"
 
+enum class ECharacterMovementState : uint8;
 class UCameraComponent;
 /**
  * 
@@ -24,6 +26,14 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UCameraComponent* FPSCamera = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	ECharacterMovementState CharacterMovementState = ECharacterMovementState::ECS_Idle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	EMainCharacterAnimState CharacterAnimationState = EMainCharacterAnimState::ECS_None;
+
+	virtual void SetMainCharacterAnimState_Implementation(EMainCharacterAnimState AnimationState) override;
 	
 	
 };

@@ -18,7 +18,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "d6075d39-5a08-419b-bd9d-bda515c0f095"
+		"BuildId": "92d7014c-f92c-473c-bdf1-d833a267acf6"
 	},
 	"BuildProducts": [
 		{
@@ -5702,6 +5702,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/ScriptableToolsEditorMode/Binaries/Win64/UnrealEditor-ScriptableToolsEditorMode.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/ScriptableToolsEditorMode/Binaries/Win64/UnrealEditor-ScriptableToolsEditorMode.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/ScriptableToolsEditorMode/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/SequencerAnimTools/Binaries/Win64/UnrealEditor-SequencerAnimTools.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -7951,6 +7963,26 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/RigVM/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/ScriptableToolsFramework/Binaries/Win64/UnrealEditor-EditorScriptableToolsFramework.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/ScriptableToolsFramework/Binaries/Win64/UnrealEditor-EditorScriptableToolsFramework.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/ScriptableToolsFramework/Binaries/Win64/UnrealEditor-ScriptableToolsFramework.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/ScriptableToolsFramework/Binaries/Win64/UnrealEditor-ScriptableToolsFramework.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/ScriptableToolsFramework/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -33828,6 +33860,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/ScriptableToolsEditorMode/ScriptableToolsEditorMode.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/SequencerAnimTools/SequencerAnimTools.uplugin",
 			"Type": "UFS"
 		},
@@ -34272,6 +34308,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/ScriptableToolsFramework/ScriptableToolsFramework.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/SignificanceManager/SignificanceManager.uplugin",
 			"Type": "UFS"
 		},
@@ -34501,6 +34541,8 @@
 		"RigLogic",
 		"RigVM",
 		"SQLiteCore",
+		"ScriptableToolsEditorMode",
+		"ScriptableToolsFramework",
 		"SequencerAnimTools",
 		"SequencerScripting",
 		"SignificanceManager",
