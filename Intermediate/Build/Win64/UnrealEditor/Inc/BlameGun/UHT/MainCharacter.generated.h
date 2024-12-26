@@ -14,16 +14,21 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BLAMEGUN_MainCharacter_generated_h
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_12_DELEGATE \
+BLAMEGUN_API void FOnCoinPickUp_DelegateWrapper(const FMulticastScriptDelegate& OnCoinPickUp, int32 Coins);
+
+
+#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_23_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMainCharacter(); \
 	friend struct Z_Construct_UClass_AMainCharacter_Statics; \
 public: \
 	DECLARE_CLASS(AMainCharacter, ACharacterBase, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/BlameGun"), NO_API) \
-	DECLARE_SERIALIZER(AMainCharacter)
+	DECLARE_SERIALIZER(AMainCharacter) \
+	virtual UObject* _getUObject() const override { return const_cast<AMainCharacter*>(this); }
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMainCharacter(AMainCharacter&&); \
@@ -35,12 +40,12 @@ public: \
 	NO_API virtual ~AMainCharacter();
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_15_PROLOG
-#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_18_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_20_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_23_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_18_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_18_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_23_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

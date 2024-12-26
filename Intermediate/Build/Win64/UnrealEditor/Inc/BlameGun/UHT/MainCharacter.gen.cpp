@@ -14,11 +14,57 @@ BLAMEGUN_API UClass* Z_Construct_UClass_ACharacterBase();
 BLAMEGUN_API UClass* Z_Construct_UClass_AMainCharacter();
 BLAMEGUN_API UClass* Z_Construct_UClass_AMainCharacter_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
+BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_SaveLoadData_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_ECharacterMovementState();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EMainCharacterAnimState();
+BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_BlameGun();
 // End Cross Module References
+
+// Begin Delegate FOnCoinPickUp
+struct Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics
+{
+	struct _Script_BlameGun_eventOnCoinPickUp_Parms
+	{
+		int32 Coins;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Coins;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::NewProp_Coins = { "Coins", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_BlameGun_eventOnCoinPickUp_Parms, Coins), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::NewProp_Coins,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_BlameGun, nullptr, "OnCoinPickUp__DelegateSignature", nullptr, nullptr, Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::_Script_BlameGun_eventOnCoinPickUp_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::_Script_BlameGun_eventOnCoinPickUp_Parms) < MAX_uint16);
+UFunction* Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnCoinPickUp_DelegateWrapper(const FMulticastScriptDelegate& OnCoinPickUp, int32 Coins)
+{
+	struct _Script_BlameGun_eventOnCoinPickUp_Parms
+	{
+		int32 Coins;
+	};
+	_Script_BlameGun_eventOnCoinPickUp_Parms Parms;
+	Parms.Coins=Coins;
+	OnCoinPickUp.ProcessMulticastDelegate<UObject>(&Parms);
+}
+// End Delegate FOnCoinPickUp
 
 // Begin Class AMainCharacter
 void AMainCharacter::StaticRegisterNativesAMainCharacter()
@@ -66,6 +112,7 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_CharacterAnimationState;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMainCharacter>::IsAbstract,
 	};
@@ -91,6 +138,9 @@ UObject* (*const Z_Construct_UClass_AMainCharacter_Statics::DependentSingletons[
 	(UObject* (*)())Z_Construct_UPackage__Script_BlameGun,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::DependentSingletons) < 16);
+const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMainCharacter_Statics::InterfaceParams[] = {
+	{ Z_Construct_UClass_UInterface_SaveLoadData_NoRegister, (int32)VTABLE_OFFSET(AMainCharacter, IInterface_SaveLoadData), false },  // 849291794
+};
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AMainCharacter_Statics::ClassParams = {
 	&AMainCharacter::StaticClass,
 	"Game",
@@ -98,11 +148,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_AMainCharacter_Statics:
 	DependentSingletons,
 	nullptr,
 	Z_Construct_UClass_AMainCharacter_Statics::PropPointers,
-	nullptr,
+	InterfaceParams,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
 	UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::PropPointers),
-	0,
+	UE_ARRAY_COUNT(InterfaceParams),
 	0x009000A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::Class_MetaDataParams), Z_Construct_UClass_AMainCharacter_Statics::Class_MetaDataParams)
 };
@@ -126,10 +176,10 @@ AMainCharacter::~AMainCharacter() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 3681656247U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 3887128273U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_2505297188(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_845695034(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_MainCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -7,6 +7,7 @@
 
 #include "Interface_Character.generated.h"
 
+class AMainCharacter;
 enum class EMainCharacterAnimState : uint8;
 class UCameraComponent;
 class ACharacterBase;
@@ -30,6 +31,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	ACharacterBase* RequestCharacter();
 
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	AMainCharacter* RequestMainCharacter();
+	
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	UCameraComponent* RequestCamera();
 	
@@ -38,4 +42,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void PlayCharacterAnimationMontage(UAnimMontage* AnimMontage);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void PickUpCoin();
+	
 };

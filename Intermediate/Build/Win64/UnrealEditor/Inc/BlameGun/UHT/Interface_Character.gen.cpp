@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeInterface_Character() {}
 
 // Begin Cross Module References
 BLAMEGUN_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
+BLAMEGUN_API UClass* Z_Construct_UClass_AMainCharacter_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Character();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Character_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EMainCharacterAnimState();
@@ -19,6 +20,54 @@ ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_BlameGun();
 // End Cross Module References
+
+// Begin Interface UInterface_Character Function PickUpCoin
+void IInterface_Character::PickUpCoin()
+{
+	check(0 && "Do not directly call Event functions in Interfaces. Call Execute_PickUpCoin instead.");
+}
+static FName NAME_UInterface_Character_PickUpCoin = FName(TEXT("PickUpCoin"));
+void IInterface_Character::Execute_PickUpCoin(UObject* O)
+{
+	check(O != NULL);
+	check(O->GetClass()->ImplementsInterface(UInterface_Character::StaticClass()));
+	UFunction* const Func = O->FindFunction(NAME_UInterface_Character_PickUpCoin);
+	if (Func)
+	{
+		O->ProcessEvent(Func, NULL);
+	}
+	else if (auto I = (IInterface_Character*)(O->GetNativeInterfaceAddress(UInterface_Character::StaticClass())))
+	{
+		I->PickUpCoin_Implementation();
+	}
+}
+struct Z_Construct_UFunction_UInterface_Character_PickUpCoin_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/Interface_Character.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInterface_Character_PickUpCoin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInterface_Character, nullptr, "PickUpCoin", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_PickUpCoin_Statics::Function_MetaDataParams), Z_Construct_UFunction_UInterface_Character_PickUpCoin_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UInterface_Character_PickUpCoin()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInterface_Character_PickUpCoin_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(IInterface_Character::execPickUpCoin)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->PickUpCoin_Implementation();
+	P_NATIVE_END;
+}
+// End Interface UInterface_Character Function PickUpCoin
 
 // Begin Interface UInterface_Character Function PlayCharacterAnimationMontage
 struct Interface_Character_eventPlayCharacterAnimationMontage_Parms
@@ -215,6 +264,76 @@ DEFINE_FUNCTION(IInterface_Character::execRequestCharacter)
 }
 // End Interface UInterface_Character Function RequestCharacter
 
+// Begin Interface UInterface_Character Function RequestMainCharacter
+struct Interface_Character_eventRequestMainCharacter_Parms
+{
+	AMainCharacter* ReturnValue;
+
+	/** Constructor, initializes return property only **/
+	Interface_Character_eventRequestMainCharacter_Parms()
+		: ReturnValue(NULL)
+	{
+	}
+};
+AMainCharacter* IInterface_Character::RequestMainCharacter()
+{
+	check(0 && "Do not directly call Event functions in Interfaces. Call Execute_RequestMainCharacter instead.");
+	Interface_Character_eventRequestMainCharacter_Parms Parms;
+	return Parms.ReturnValue;
+}
+static FName NAME_UInterface_Character_RequestMainCharacter = FName(TEXT("RequestMainCharacter"));
+AMainCharacter* IInterface_Character::Execute_RequestMainCharacter(UObject* O)
+{
+	check(O != NULL);
+	check(O->GetClass()->ImplementsInterface(UInterface_Character::StaticClass()));
+	Interface_Character_eventRequestMainCharacter_Parms Parms;
+	UFunction* const Func = O->FindFunction(NAME_UInterface_Character_RequestMainCharacter);
+	if (Func)
+	{
+		O->ProcessEvent(Func, &Parms);
+	}
+	else if (auto I = (IInterface_Character*)(O->GetNativeInterfaceAddress(UInterface_Character::StaticClass())))
+	{
+		Parms.ReturnValue = I->RequestMainCharacter_Implementation();
+	}
+	return Parms.ReturnValue;
+}
+struct Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/Interface_Character.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Interface_Character_eventRequestMainCharacter_Parms, ReturnValue), Z_Construct_UClass_AMainCharacter_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInterface_Character, nullptr, "RequestMainCharacter", nullptr, nullptr, Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::PropPointers), sizeof(Interface_Character_eventRequestMainCharacter_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::Function_MetaDataParams), Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Interface_Character_eventRequestMainCharacter_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UInterface_Character_RequestMainCharacter()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInterface_Character_RequestMainCharacter_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(IInterface_Character::execRequestMainCharacter)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(AMainCharacter**)Z_Param__Result=P_THIS->RequestMainCharacter_Implementation();
+	P_NATIVE_END;
+}
+// End Interface UInterface_Character Function RequestMainCharacter
+
 // Begin Interface UInterface_Character Function SetMainCharacterAnimState
 struct Interface_Character_eventSetMainCharacterAnimState_Parms
 {
@@ -286,8 +405,10 @@ void UInterface_Character::StaticRegisterNativesUInterface_Character()
 {
 	UClass* Class = UInterface_Character::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "PickUpCoin", &IInterface_Character::execPickUpCoin },
 		{ "PlayCharacterAnimationMontage", &IInterface_Character::execPlayCharacterAnimationMontage },
 		{ "RequestCharacter", &IInterface_Character::execRequestCharacter },
+		{ "RequestMainCharacter", &IInterface_Character::execRequestMainCharacter },
 		{ "SetMainCharacterAnimState", &IInterface_Character::execSetMainCharacterAnimState },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -306,9 +427,11 @@ struct Z_Construct_UClass_UInterface_Character_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UInterface_Character_PickUpCoin, "PickUpCoin" }, // 1303859244
 		{ &Z_Construct_UFunction_UInterface_Character_PlayCharacterAnimationMontage, "PlayCharacterAnimationMontage" }, // 2327028697
 		{ &Z_Construct_UFunction_UInterface_Character_RequestCamera, "RequestCamera" }, // 3720369110
 		{ &Z_Construct_UFunction_UInterface_Character_RequestCharacter, "RequestCharacter" }, // 2422463470
+		{ &Z_Construct_UFunction_UInterface_Character_RequestMainCharacter, "RequestMainCharacter" }, // 1139198535
 		{ &Z_Construct_UFunction_UInterface_Character_SetMainCharacterAnimState, "SetMainCharacterAnimState" }, // 907505221
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -358,10 +481,10 @@ UInterface_Character::~UInterface_Character() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UInterface_Character, UInterface_Character::StaticClass, TEXT("UInterface_Character"), &Z_Registration_Info_UClass_UInterface_Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInterface_Character), 436483236U) },
+		{ Z_Construct_UClass_UInterface_Character, UInterface_Character::StaticClass, TEXT("UInterface_Character"), &Z_Registration_Info_UClass_UInterface_Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInterface_Character), 3310042614U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_1834779925(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_2950536037(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

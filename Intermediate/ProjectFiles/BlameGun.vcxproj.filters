@@ -98,16 +98,19 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\Interface_Character.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Character\Inventory.cpp">
-      <Filter>Source\BlameGun\Private\Character</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\SprintComponent.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Items">
       <UniqueIdentifier>{EA29A24A-A03F-348E-BC6E-5B851D5855BA}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Items\Inventory.cpp">
+      <Filter>Source\BlameGun\Private\Items</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Items\ItemBase.cpp">
+      <Filter>Source\BlameGun\Private\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Items\PickUpComponent.cpp">
       <Filter>Source\BlameGun\Private\Items</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Weapon">
@@ -191,16 +194,19 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\Character\Inventory.h">
-      <Filter>Source\BlameGun\Public\Character</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\Items">
       <UniqueIdentifier>{C909754A-37E9-3CE2-AC36-44DDF49B47FC}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Items\Inventory.h">
+      <Filter>Source\BlameGun\Public\Items</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Items\ItemBase.h">
+      <Filter>Source\BlameGun\Public\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Items\PickUpComponent.h">
       <Filter>Source\BlameGun\Public\Items</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\Weapon">
