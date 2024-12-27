@@ -37,5 +37,8 @@
 			"Name": "ScriptableToolsFramework",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"Windows"
 	]
 }

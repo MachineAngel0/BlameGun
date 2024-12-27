@@ -9,6 +9,7 @@
 #include "MainCharacter.generated.h"
 
 
+class UHealthComponent;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCoinPickUp, int, Coins);
 
 
@@ -31,11 +32,23 @@ public:
 	virtual void LoadData_Implementation(UMySaveGame* SaveGame) override;
 	
 	
+	//scene components
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	AWeaponBase* CurrentWeapon = nullptr;
+	TObjectPtr<UCameraComponent> FPSCamera = nullptr;
+
+	
+
+	//actor components
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UCameraComponent* FPSCamera = nullptr;
+	TObjectPtr<UHealthComponent> HealthComponent = nullptr;
+
+
+	//interfaces
+	virtual void SetMainCharacterAnimState_Implementation(EMainCharacterAnimState AnimationState) override;
+
+	virtual AMainCharacter* RequestMainCharacter_Implementation() override;
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ECharacterMovementState CharacterMovementState = ECharacterMovementState::ECS_Idle;
@@ -43,13 +56,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EMainCharacterAnimState CharacterAnimationState = EMainCharacterAnimState::ECS_None;
 
-	virtual void SetMainCharacterAnimState_Implementation(EMainCharacterAnimState AnimationState) override;
-
-	virtual AMainCharacter* RequestMainCharacter_Implementation() override;
+	
 	
 	// bad practice but I don't have an involved inventory system so it's fine
 	virtual void PickUpCoin_Implementation() override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int CoinsAmount = 0;
+	UPROPERTY(Blueprintable, BlueprintAssignable)
 	FOnCoinPickUp OnCoinPickUp;
 	
 	

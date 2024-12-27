@@ -18,15 +18,14 @@ AItemBase::AItemBase()
 	PrimaryActorTick.bCanEverTick = true;
 
 
-
-	
 	CollisionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("USphereComponent"));
-	RootComponent = CollisionSphere;
-
+	SetRootComponent(CollisionSphere);
 	
 	ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
-	ItemMesh->SetupAttachment(ItemMesh);
+	ItemMesh->SetupAttachment(CollisionSphere);
 
+	ItemMesh->CastShadow = false;
+	
 	ItemName = "Coins";	
 
 }
@@ -53,8 +52,16 @@ void AItemBase::Tick(float DeltaTime)
 void AItemBase::ItemOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+
+	// check if the class implements the interface
+	const bool HasInterface = OtherActor->GetClass()->ImplementsInterface(UInterface_Character::StaticClass());
+	if (!HasInterface) return;
+
+		
 	AMainCharacter* GiveToMainCharacter = IInterface_Character::Execute_RequestMainCharacter(OtherActor);
 
+
+	
 	if (!GiveToMainCharacter)
 	{
 		UE_LOG(ItemBase, Error, TEXT("Inventory Component not found"));

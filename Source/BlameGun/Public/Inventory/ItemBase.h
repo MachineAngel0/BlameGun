@@ -44,11 +44,12 @@ protected:
 	FString ItemName = "";
 	
 
+	//note you dont need to return tobjectptr (only use tobjectptr for members), you can just use uspherecomponent* as a return type
 	//TODO: set mesh to have its physics enabled, and to generate on hit events
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	USphereComponent* CollisionSphere = nullptr;
+	TObjectPtr<USphereComponent> CollisionSphere = nullptr;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Blueprintable, BlueprintType)
-	UStaticMeshComponent* ItemMesh = nullptr;
+	TObjectPtr<UStaticMeshComponent> ItemMesh = nullptr;
 
 	
 };

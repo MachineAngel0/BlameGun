@@ -444,6 +444,12 @@
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Character.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Generic.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Generic.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Weapons.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -468,14 +474,9 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Interface_Damage.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Inventory\ItemBase.cpp" />
     <ClCompile Include="..\..\Source\BlameGun\Private\MainCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\Interface_GameInstance.cpp" />
-    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\Interface_SaveLoadData.cpp" />
-    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\MyGameInstance.cpp" />
-    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\MySaveGame.cpp" />
     <ClCompile Include="..\..\Source\BlameGun\Private\SoundComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -485,10 +486,28 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\EquipWeaponComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Character\HealthComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\Interface_Character.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\SprintComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Inventory\ItemBase.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\Interface_GameInstance.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\Interface_SaveLoadData.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\MyGameInstance.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\MySaveGame.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Weapon\GunSoundComponent.cpp">
@@ -548,10 +567,28 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\EquipWeaponComponent.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\HealthComponent.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Inventory\ItemBase.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\Interface_GameInstance.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\Interface_SaveLoadData.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\MyGameInstance.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\MySaveGame.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\GunSoundComponent.h">
@@ -587,13 +624,6 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Weapon\Shared\ProjectileSpawnerComponent.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\BlameGun\Public\Inventory\ItemBase.h" />
-    <ClInclude Include="..\..\Source\BlameGun\Public\SaveLoadSystem\Interface_GameInstance.h" />
-    <ClInclude Include="..\..\Source\BlameGun\Public\SaveLoadSystem\Interface_SaveLoadData.h" />
-    <ClInclude Include="..\..\Source\BlameGun\Public\SaveLoadSystem\MyGameInstance.h" />
-    <ClInclude Include="..\..\Source\BlameGun\Public\SaveLoadSystem\MySaveGame.h" />
   </ItemGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
