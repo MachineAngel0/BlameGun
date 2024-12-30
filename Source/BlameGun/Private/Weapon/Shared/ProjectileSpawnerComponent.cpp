@@ -3,6 +3,9 @@
 
 #include "Weapon/Shared/ProjectileSpawnerComponent.h"
 
+#include "DamageInfoComponent.h"
+#include "Interface_Damage.h"
+#include "Character/Interface_Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Weapon/WeaponBase.h"
@@ -51,38 +54,67 @@ void UProjectileSpawnerComponent::SpawnProjectile()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Invalid ProjectileReference"));
 	}
-	
-	GetWorld()->SpawnActor<AProjectileActor>(ProjectileReference, DoLineTrace());
+
+
+	//AProjectileActor* ProjectileActor = GetWorld()->SpawnActor<AProjectileActor>(ProjectileReference, WeaponLineTrace());
+	AProjectileActor* ProjectileActor = GetWorld()->SpawnActorDeferred<AProjectileActor>(ProjectileReference, WeaponLineTrace());
+	ProjectileActor->WeaponOwner = this->WeaponOwner;
+	ProjectileActor->DamageAmount = this->WeaponOwner->DamageInfoComponent->ReturnDamageAmount();
+	UGameplayStatics::FinishSpawningActor(ProjectileActor, WeaponLineTrace());
+		
 	
 	
 
-
-	/*
-	UE_LOG(LogTemp, Warning, TEXT("SpawnProjectileCalled"));
-
-	WeaponOwner->ProjectileSocket;
-	FVector SocketLocation = WeaponOwner->WeaponSkeletalMesh->GetSocketLocation(WeaponOwner->ProjectileSocket);
-	UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
-	FRotator CameraRot =  UGameplayStatics::GetPlayerCameraManager(GetWorld(),0)->GetCameraRotation();
-
-	FVector thing = CameraRot.RotateVector(ProjectileOffset);
-	FVector otherthing = SocketLocation + thing;
 	
-	FVector Scale = FVector(1, 1, 1);
-	FTransform SpawnTransform = FTransform(CameraRot, otherthing, Scale);
+}
 
-	
-	if (!GetWorld())
+void UProjectileSpawnerComponent::SpawnProjectileAtActorLocation()
+{
+
+	AProjectileActor* ProjectileActor = GetWorld()->SpawnActorDeferred<AProjectileActor>(ProjectileReference, ActorLineTrace());
+	const bool HasInterface = GetOwner()->GetClass()->ImplementsInterface(UInterface_Damage::StaticClass());
+	if (HasInterface)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Invalid World"));
+		UDamageInfoComponent* DamageInfo= IInterface_Damage::Execute_RequestDamageComponent(GetOwner());
+		if (DamageInfo)
+		{
+			ProjectileActor->DamageAmount = DamageInfo->ReturnDamageAmount();
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("No DamageComponent"));
+		}
+		
 	}
-	if (!ProjectileReference)
+	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Invalid ProjectileReference"));
+		UE_LOG(LogTemp, Warning, TEXT("Invalid Interface"));
 	}
+	UGameplayStatics::FinishSpawningActor(ProjectileActor, ActorLineTrace());
 	
-	GetWorld()->SpawnActor<AProjectileActor>(ProjectileReference, SpawnTransform);
-	
-	*/
+}
+
+void UProjectileSpawnerComponent::SpawnProjectileAtLocation(FTransform Transform)
+{
+	AProjectileActor* ProjectileActor = GetWorld()->SpawnActorDeferred<AProjectileActor>(ProjectileReference, Transform);
+	const bool HasInterface = GetOwner()->GetClass()->ImplementsInterface(UInterface_Damage::StaticClass());
+	if (HasInterface)
+	{
+		UDamageInfoComponent* DamageInfo= IInterface_Damage::Execute_RequestDamageComponent(GetOwner());
+		if (DamageInfo)
+		{
+			ProjectileActor->DamageAmount = DamageInfo->ReturnDamageAmount();
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("No DamageComponent"));
+		}
+		
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Invalid Interface"));
+	}
+	UGameplayStatics::FinishSpawningActor(ProjectileActor, Transform);
 }
 

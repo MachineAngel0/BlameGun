@@ -7,7 +7,13 @@
         "Includes": [
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blamegun\\definitions.blamegun.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\weapon\\shared\\projectileactor.h",
-            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\projectileactor.generated.h"
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\projectileactor.generated.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\interface_damage.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\interface_damage.generated.h",
+            "e:\\ue5.5source\\unrealengine\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "e:\\ue5.5source\\unrealengine\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "e:\\ue5.5source\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "e:\\ue5.5source\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

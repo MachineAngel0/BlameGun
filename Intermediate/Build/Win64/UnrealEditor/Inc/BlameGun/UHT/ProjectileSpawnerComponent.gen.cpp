@@ -20,20 +20,20 @@ COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 UPackage* Z_Construct_UPackage__Script_BlameGun();
 // End Cross Module References
 
-// Begin Class UProjectileSpawnerComponent Function DoLineTrace
-struct ProjectileSpawnerComponent_eventDoLineTrace_Parms
+// Begin Class UProjectileSpawnerComponent Function ActorLineTrace
+struct ProjectileSpawnerComponent_eventActorLineTrace_Parms
 {
 	FTransform ReturnValue;
 };
-static const FName NAME_UProjectileSpawnerComponent_DoLineTrace = FName(TEXT("DoLineTrace"));
-FTransform UProjectileSpawnerComponent::DoLineTrace()
+static const FName NAME_UProjectileSpawnerComponent_ActorLineTrace = FName(TEXT("ActorLineTrace"));
+FTransform UProjectileSpawnerComponent::ActorLineTrace()
 {
-	ProjectileSpawnerComponent_eventDoLineTrace_Parms Parms;
-	UFunction* Func = FindFunctionChecked(NAME_UProjectileSpawnerComponent_DoLineTrace);
+	ProjectileSpawnerComponent_eventActorLineTrace_Parms Parms;
+	UFunction* Func = FindFunctionChecked(NAME_UProjectileSpawnerComponent_ActorLineTrace);
 	ProcessEvent(Func,&Parms);
 	return Parms.ReturnValue;
 }
-struct Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics
+struct Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -46,23 +46,23 @@ struct Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileSpawnerComponent_eventDoLineTrace_Parms, ReturnValue), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::NewProp_ReturnValue,
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileSpawnerComponent_eventActorLineTrace_Parms, ReturnValue), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::NewProp_ReturnValue,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProjectileSpawnerComponent, nullptr, "DoLineTrace", nullptr, nullptr, Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::PropPointers), sizeof(ProjectileSpawnerComponent_eventDoLineTrace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::Function_MetaDataParams) };
-static_assert(sizeof(ProjectileSpawnerComponent_eventDoLineTrace_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProjectileSpawnerComponent, nullptr, "ActorLineTrace", nullptr, nullptr, Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::PropPointers), sizeof(ProjectileSpawnerComponent_eventActorLineTrace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::Function_MetaDataParams) };
+static_assert(sizeof(ProjectileSpawnerComponent_eventActorLineTrace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-// End Class UProjectileSpawnerComponent Function DoLineTrace
+// End Class UProjectileSpawnerComponent Function ActorLineTrace
 
 // Begin Class UProjectileSpawnerComponent Function SpawnProjectile
 struct Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectile_Statics
@@ -93,12 +93,129 @@ DEFINE_FUNCTION(UProjectileSpawnerComponent::execSpawnProjectile)
 }
 // End Class UProjectileSpawnerComponent Function SpawnProjectile
 
+// Begin Class UProjectileSpawnerComponent Function SpawnProjectileAtActorLocation
+struct Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProjectileSpawnerComponent, nullptr, "SpawnProjectileAtActorLocation", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UProjectileSpawnerComponent::execSpawnProjectileAtActorLocation)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SpawnProjectileAtActorLocation();
+	P_NATIVE_END;
+}
+// End Class UProjectileSpawnerComponent Function SpawnProjectileAtActorLocation
+
+// Begin Class UProjectileSpawnerComponent Function SpawnProjectileAtLocation
+struct Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics
+{
+	struct ProjectileSpawnerComponent_eventSpawnProjectileAtLocation_Parms
+	{
+		FTransform Transform;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_Transform;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::NewProp_Transform = { "Transform", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileSpawnerComponent_eventSpawnProjectileAtLocation_Parms, Transform), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::NewProp_Transform,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProjectileSpawnerComponent, nullptr, "SpawnProjectileAtLocation", nullptr, nullptr, Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::PropPointers), sizeof(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::ProjectileSpawnerComponent_eventSpawnProjectileAtLocation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::ProjectileSpawnerComponent_eventSpawnProjectileAtLocation_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UProjectileSpawnerComponent::execSpawnProjectileAtLocation)
+{
+	P_GET_STRUCT(FTransform,Z_Param_Transform);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SpawnProjectileAtLocation(Z_Param_Transform);
+	P_NATIVE_END;
+}
+// End Class UProjectileSpawnerComponent Function SpawnProjectileAtLocation
+
+// Begin Class UProjectileSpawnerComponent Function WeaponLineTrace
+struct ProjectileSpawnerComponent_eventWeaponLineTrace_Parms
+{
+	FTransform ReturnValue;
+};
+static const FName NAME_UProjectileSpawnerComponent_WeaponLineTrace = FName(TEXT("WeaponLineTrace"));
+FTransform UProjectileSpawnerComponent::WeaponLineTrace()
+{
+	ProjectileSpawnerComponent_eventWeaponLineTrace_Parms Parms;
+	UFunction* Func = FindFunctionChecked(NAME_UProjectileSpawnerComponent_WeaponLineTrace);
+	ProcessEvent(Func,&Parms);
+	return Parms.ReturnValue;
+}
+struct Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "IsBlueprintBase", "true" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileSpawnerComponent_eventWeaponLineTrace_Parms, ReturnValue), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProjectileSpawnerComponent, nullptr, "WeaponLineTrace", nullptr, nullptr, Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::PropPointers), sizeof(ProjectileSpawnerComponent_eventWeaponLineTrace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::Function_MetaDataParams), Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::Function_MetaDataParams) };
+static_assert(sizeof(ProjectileSpawnerComponent_eventWeaponLineTrace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UProjectileSpawnerComponent Function WeaponLineTrace
+
 // Begin Class UProjectileSpawnerComponent
 void UProjectileSpawnerComponent::StaticRegisterNativesUProjectileSpawnerComponent()
 {
 	UClass* Class = UProjectileSpawnerComponent::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "SpawnProjectile", &UProjectileSpawnerComponent::execSpawnProjectile },
+		{ "SpawnProjectileAtActorLocation", &UProjectileSpawnerComponent::execSpawnProjectileAtActorLocation },
+		{ "SpawnProjectileAtLocation", &UProjectileSpawnerComponent::execSpawnProjectileAtLocation },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -138,8 +255,11 @@ struct Z_Construct_UClass_UProjectileSpawnerComponent_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_DoLineTrace, "DoLineTrace" }, // 3788327000
+		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_ActorLineTrace, "ActorLineTrace" }, // 1391124351
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectile, "SpawnProjectile" }, // 2475105405
+		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtActorLocation, "SpawnProjectileAtActorLocation" }, // 1339107208
+		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileAtLocation, "SpawnProjectileAtLocation" }, // 3531599973
+		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace, "WeaponLineTrace" }, // 1744723146
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -194,10 +314,10 @@ UProjectileSpawnerComponent::~UProjectileSpawnerComponent() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UProjectileSpawnerComponent, UProjectileSpawnerComponent::StaticClass, TEXT("UProjectileSpawnerComponent"), &Z_Registration_Info_UClass_UProjectileSpawnerComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProjectileSpawnerComponent), 3769455813U) },
+		{ Z_Construct_UClass_UProjectileSpawnerComponent, UProjectileSpawnerComponent::StaticClass, TEXT("UProjectileSpawnerComponent"), &Z_Registration_Info_UClass_UProjectileSpawnerComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProjectileSpawnerComponent), 1489506788U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_2491049905(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_36490886(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

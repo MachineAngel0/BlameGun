@@ -15,14 +15,14 @@ class USkeletalMeshComponent;
 #endif
 #define BLAMEGUN_WeaponBase_generated_h
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSetScaleOnAttach); \
 	DECLARE_FUNCTION(execEndWeaponAttack); \
 	DECLARE_FUNCTION(execStartWeaponAttack); \
 	DECLARE_FUNCTION(execGetWeaponSkeletalMesh);
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeaponBase(); \
 	friend struct Z_Construct_UClass_AWeaponBase_Statics; \
@@ -32,7 +32,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AWeaponBase*>(this); }
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AWeaponBase(AWeaponBase&&); \
@@ -44,13 +44,13 @@ public: \
 	NO_API virtual ~AWeaponBase();
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_17_PROLOG
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_18_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_20_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 // Begin Cross Module References
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase();
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
+BLAMEGUN_API UClass* Z_Construct_UClass_UDamageInfoComponent_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Weapon_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EMainCharacterAnimState();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EWeaponBaseType();
@@ -177,6 +178,11 @@ struct Z_Construct_UClass_AWeaponBase_Statics
 		{ "IncludePath", "Weapon/WeaponBase.h" },
 		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DamageInfoComponent_MetaData[] = {
+		{ "Category", "WeaponBase" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponSkeletalMesh_MetaData[] = {
 		{ "Category", "WeaponBase" },
 		{ "EditInline", "true" },
@@ -214,6 +220,7 @@ struct Z_Construct_UClass_AWeaponBase_Statics
 		{ "ModuleRelativePath", "Public/Weapon/WeaponBase.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DamageInfoComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponSkeletalMesh;
 	static const UECodeGen_Private::FNamePropertyParams NewProp_EquipSocket;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_AttachmentLocationRule_Underlying;
@@ -243,6 +250,7 @@ struct Z_Construct_UClass_AWeaponBase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_DamageInfoComponent = { "DamageInfoComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, DamageInfoComponent), Z_Construct_UClass_UDamageInfoComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DamageInfoComponent_MetaData), NewProp_DamageInfoComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponSkeletalMesh = { "WeaponSkeletalMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, WeaponSkeletalMesh), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponSkeletalMesh_MetaData), NewProp_WeaponSkeletalMesh_MetaData) };
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_EquipSocket = { "EquipSocket", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, EquipSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EquipSocket_MetaData), NewProp_EquipSocket_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentLocationRule_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
@@ -258,6 +266,7 @@ const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AWeaponBase_St
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_SetCharacterAnimationStateTo_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_SetCharacterAnimationStateTo = { "SetCharacterAnimationStateTo", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWeaponBase, SetCharacterAnimationStateTo), Z_Construct_UEnum_BlameGun_EMainCharacterAnimState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SetCharacterAnimationStateTo_MetaData), NewProp_SetCharacterAnimationStateTo_MetaData) }; // 3551852300
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeaponBase_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_DamageInfoComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponSkeletalMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_EquipSocket,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_AttachmentLocationRule_Underlying,
@@ -317,10 +326,10 @@ AWeaponBase::~AWeaponBase() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWeaponBase, AWeaponBase::StaticClass, TEXT("AWeaponBase"), &Z_Registration_Info_UClass_AWeaponBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeaponBase), 535009247U) },
+		{ Z_Construct_UClass_AWeaponBase, AWeaponBase::StaticClass, TEXT("AWeaponBase"), &Z_Registration_Info_UClass_AWeaponBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeaponBase), 2324741622U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_3121664815(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_1476165707(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

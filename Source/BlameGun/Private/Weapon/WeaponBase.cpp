@@ -2,6 +2,8 @@
 
 
 #include "Weapon/WeaponBase.h"
+
+#include "DamageInfoComponent.h"
 // Sets default values
 AWeaponBase::AWeaponBase()
 {
@@ -11,12 +13,18 @@ AWeaponBase::AWeaponBase()
 	AttachRules = {AttachmentLocationRule, AttachmentRotationRule, AttachmentScaleRule, ShouldWeldBodies};
 
 	WeaponSkeletalMesh->FirstPersonPrimitiveType = EFirstPersonPrimitiveType::FirstPerson;
+
+	
+	DamageInfoComponent = CreateDefaultSubobject<UDamageInfoComponent>(TEXT("DamageInfo"));		
+
+	
 }
 
 // Called when the game starts or when spawned
 void AWeaponBase::BeginPlay()
 {
 	Super::BeginPlay();
+
 	
 }
 

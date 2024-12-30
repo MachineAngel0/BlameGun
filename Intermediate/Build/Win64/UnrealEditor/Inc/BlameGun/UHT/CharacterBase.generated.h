@@ -15,11 +15,14 @@ class USkeletalMeshComponent;
 #endif
 #define BLAMEGUN_CharacterBase_generated_h
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void DeathLogic_Implementation(); \
+	DECLARE_FUNCTION(execDeathLogic); \
 	DECLARE_FUNCTION(execGetCharacterMesh);
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_CALLBACK_WRAPPERS
+#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterBase(); \
 	friend struct Z_Construct_UClass_ACharacterBase_Statics; \
@@ -29,7 +32,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ACharacterBase*>(this); }
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ACharacterBase(ACharacterBase&&); \
@@ -41,13 +44,14 @@ public: \
 	NO_API virtual ~ACharacterBase();
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_12_PROLOG
-#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_16_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_15_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_CALLBACK_WRAPPERS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_CharacterBase_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

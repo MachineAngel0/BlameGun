@@ -7,6 +7,7 @@
 
 #include "Interface_Damage.generated.h"
 
+class UDamageInfoComponent;
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
 class UInterface_Damage : public UInterface
@@ -25,6 +26,9 @@ class BLAMEGUN_API IInterface_Damage
 public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void ProcessDamage();
+	void ProcessDamage(float DamageAmount);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UDamageInfoComponent* RequestDamageComponent();
 	
 };

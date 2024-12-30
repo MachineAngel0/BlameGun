@@ -53,6 +53,12 @@
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Character.h">
       <Filter>Source\BlameGun\Enums_Structs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Generic.cpp">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Generic.h">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Weapons.cpp">
       <Filter>Source\BlameGun\Enums_Structs</Filter>
     </ClCompile>
@@ -74,7 +80,7 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\CharacterBase.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\EnemyBase.cpp">
+    <ClCompile Include="..\..\Source\BlameGun\Private\DamageComponent.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Interface_Damage.cpp">
@@ -95,23 +101,41 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\EquipWeaponComponent.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Character\HealthComponent.cpp">
+      <Filter>Source\BlameGun\Private\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\Interface_Character.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\SprintComponent.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
-    <Filter Include="Source\BlameGun\Private\Items">
-      <UniqueIdentifier>{EA29A24A-A03F-348E-BC6E-5B851D5855BA}</UniqueIdentifier>
+    <Filter Include="Source\BlameGun\Private\Enemy">
+      <UniqueIdentifier>{02DEDED2-848D-3153-AFEB-EF8C7D1F0A87}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Items\Inventory.cpp">
-      <Filter>Source\BlameGun\Private\Items</Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\EnemyBase.cpp">
+      <Filter>Source\BlameGun\Private\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Items\ItemBase.cpp">
-      <Filter>Source\BlameGun\Private\Items</Filter>
+    <Filter Include="Source\BlameGun\Private\Inventory">
+      <UniqueIdentifier>{04B9198E-E034-3986-ACB1-222EAAE66E09}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Inventory\ItemBase.cpp">
+      <Filter>Source\BlameGun\Private\Inventory</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Items\PickUpComponent.cpp">
-      <Filter>Source\BlameGun\Private\Items</Filter>
+    <Filter Include="Source\BlameGun\Private\SaveLoadSystem">
+      <UniqueIdentifier>{27908B69-A66C-3828-A5DE-A7230E1522F7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\Interface_GameInstance.cpp">
+      <Filter>Source\BlameGun\Private\SaveLoadSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\Interface_SaveLoadData.cpp">
+      <Filter>Source\BlameGun\Private\SaveLoadSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\MyGameInstance.cpp">
+      <Filter>Source\BlameGun\Private\SaveLoadSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\SaveLoadSystem\MySaveGame.cpp">
+      <Filter>Source\BlameGun\Private\SaveLoadSystem</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Weapon">
       <UniqueIdentifier>{891253B5-6988-3FD3-AF0F-5C53CB4A8361}</UniqueIdentifier>
@@ -170,7 +194,7 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\CharacterBase.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\EnemyBase.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\DamageComponent.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Interface_Damage.h">
@@ -191,23 +215,41 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\EquipWeaponComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\HealthComponent.h">
+      <Filter>Source\BlameGun\Public\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
-    <Filter Include="Source\BlameGun\Public\Items">
-      <UniqueIdentifier>{C909754A-37E9-3CE2-AC36-44DDF49B47FC}</UniqueIdentifier>
+    <Filter Include="Source\BlameGun\Public\Enemy">
+      <UniqueIdentifier>{9FB24032-305C-3008-8AE7-BC47DE49BE69}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\BlameGun\Public\Items\Inventory.h">
-      <Filter>Source\BlameGun\Public\Items</Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\EnemyBase.h">
+      <Filter>Source\BlameGun\Public\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\Items\ItemBase.h">
-      <Filter>Source\BlameGun\Public\Items</Filter>
+    <Filter Include="Source\BlameGun\Public\Inventory">
+      <UniqueIdentifier>{0D8D30F1-2E45-3D60-8501-744A1394EDC0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Inventory\ItemBase.h">
+      <Filter>Source\BlameGun\Public\Inventory</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\Items\PickUpComponent.h">
-      <Filter>Source\BlameGun\Public\Items</Filter>
+    <Filter Include="Source\BlameGun\Public\SaveLoadSystem">
+      <UniqueIdentifier>{AA127325-13C9-32A5-8F80-3E000761AF20}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\Interface_GameInstance.h">
+      <Filter>Source\BlameGun\Public\SaveLoadSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\Interface_SaveLoadData.h">
+      <Filter>Source\BlameGun\Public\SaveLoadSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\MyGameInstance.h">
+      <Filter>Source\BlameGun\Public\SaveLoadSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\SaveLoadSystem\MySaveGame.h">
+      <Filter>Source\BlameGun\Public\SaveLoadSystem</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\Weapon">
       <UniqueIdentifier>{431122EF-5032-3B82-A873-55EED630FA3D}</UniqueIdentifier>

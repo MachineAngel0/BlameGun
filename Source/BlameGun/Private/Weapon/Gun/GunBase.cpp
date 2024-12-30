@@ -18,6 +18,8 @@ AGunBase::AGunBase()
 	PrimaryActorTick.bCanEverTick = true;
 
 	WeaponBaseType = EWeaponBaseType::ECS_Gun;
+	
+	
 }
 
 // Called when the game starts or when spawned
@@ -84,6 +86,7 @@ void AGunBase::StartWeaponAttack()
 		PlayerCharacter->PlayCharacterAnimationMontage_Implementation(AttackMontage);
 		
 		ProjectileSpawnerComponent->SpawnProjectile();
+		//ProjectileSpawnerComponent->SpawnProjectileTest(ProjectileSpawnerComponent->WeaponLineTrace());
 	}
 	
 	

@@ -7,6 +7,7 @@
 
 #include "Interface_Character.generated.h"
 
+class UHealthComponent;
 class AMainCharacter;
 enum class EMainCharacterAnimState : uint8;
 class UCameraComponent;
@@ -45,5 +46,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void PickUpCoin();
+
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UHealthComponent* RequestHealthComponent();
 	
 };

@@ -9,6 +9,7 @@
 #include "ProjectileSpawnerComponent.generated.h"
 
 
+
 class AProjectileActor;
 
 /*
@@ -39,9 +40,19 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	virtual void SpawnProjectile();
+	
+	UFUNCTION(BlueprintCallable)
+	virtual void SpawnProjectileAtActorLocation();
+
+	UFUNCTION(BlueprintCallable)
+	virtual void SpawnProjectileAtLocation(FTransform Transform);
+	
+	
+	UFUNCTION(Blueprintable, BlueprintImplementableEvent)
+	FTransform WeaponLineTrace();
 
 	UFUNCTION(Blueprintable, BlueprintImplementableEvent)
-	FTransform DoLineTrace();
+	FTransform ActorLineTrace();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector ProjectileOffset = FVector(100, 0, -10);

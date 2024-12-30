@@ -35,4 +35,7 @@ public:
 	UPROPERTY()
 	int CoinsAccumulatedByMainCharacter;
 
+	UPROPERTY()
+	float CharacterHealth;
+	
 };

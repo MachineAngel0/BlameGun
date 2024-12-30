@@ -26,7 +26,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UProjectileSpawnerComponent* ProjectileSpawnerComponent = nullptr;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UGunSoundComponent* GunSoundComponent = nullptr;	
+	UGunSoundComponent* GunSoundComponent = nullptr;
+
+	
 	
 public:
 	// Called every frame

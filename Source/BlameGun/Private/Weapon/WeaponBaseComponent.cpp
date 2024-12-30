@@ -37,6 +37,10 @@ void UWeaponBaseComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 void UWeaponBaseComponent::InitializeWeaponOwner()
 {
+	const bool HasInterface = GetOwner()->GetClass()->ImplementsInterface(UInterface_Weapon::StaticClass());
+	if (!HasInterface) return;
+
+	
 	WeaponOwner = IInterface_Weapon::Execute_RequestWeapon(GetOwner());
 	if (!WeaponOwner)
 	{

@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeInterface_Character() {}
 // Begin Cross Module References
 BLAMEGUN_API UClass* Z_Construct_UClass_ACharacterBase_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_AMainCharacter_NoRegister();
+BLAMEGUN_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Character();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Character_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EMainCharacterAnimState();
@@ -264,6 +265,79 @@ DEFINE_FUNCTION(IInterface_Character::execRequestCharacter)
 }
 // End Interface UInterface_Character Function RequestCharacter
 
+// Begin Interface UInterface_Character Function RequestHealthComponent
+struct Interface_Character_eventRequestHealthComponent_Parms
+{
+	UHealthComponent* ReturnValue;
+
+	/** Constructor, initializes return property only **/
+	Interface_Character_eventRequestHealthComponent_Parms()
+		: ReturnValue(NULL)
+	{
+	}
+};
+UHealthComponent* IInterface_Character::RequestHealthComponent()
+{
+	check(0 && "Do not directly call Event functions in Interfaces. Call Execute_RequestHealthComponent instead.");
+	Interface_Character_eventRequestHealthComponent_Parms Parms;
+	return Parms.ReturnValue;
+}
+static FName NAME_UInterface_Character_RequestHealthComponent = FName(TEXT("RequestHealthComponent"));
+UHealthComponent* IInterface_Character::Execute_RequestHealthComponent(UObject* O)
+{
+	check(O != NULL);
+	check(O->GetClass()->ImplementsInterface(UInterface_Character::StaticClass()));
+	Interface_Character_eventRequestHealthComponent_Parms Parms;
+	UFunction* const Func = O->FindFunction(NAME_UInterface_Character_RequestHealthComponent);
+	if (Func)
+	{
+		O->ProcessEvent(Func, &Parms);
+	}
+	else if (auto I = (IInterface_Character*)(O->GetNativeInterfaceAddress(UInterface_Character::StaticClass())))
+	{
+		Parms.ReturnValue = I->RequestHealthComponent_Implementation();
+	}
+	return Parms.ReturnValue;
+}
+struct Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Character/Interface_Character.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Interface_Character_eventRequestHealthComponent_Parms, ReturnValue), Z_Construct_UClass_UHealthComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UInterface_Character, nullptr, "RequestHealthComponent", nullptr, nullptr, Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::PropPointers), sizeof(Interface_Character_eventRequestHealthComponent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::Function_MetaDataParams), Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Interface_Character_eventRequestHealthComponent_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UInterface_Character_RequestHealthComponent()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UInterface_Character_RequestHealthComponent_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(IInterface_Character::execRequestHealthComponent)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(UHealthComponent**)Z_Param__Result=P_THIS->RequestHealthComponent_Implementation();
+	P_NATIVE_END;
+}
+// End Interface UInterface_Character Function RequestHealthComponent
+
 // Begin Interface UInterface_Character Function RequestMainCharacter
 struct Interface_Character_eventRequestMainCharacter_Parms
 {
@@ -408,6 +482,7 @@ void UInterface_Character::StaticRegisterNativesUInterface_Character()
 		{ "PickUpCoin", &IInterface_Character::execPickUpCoin },
 		{ "PlayCharacterAnimationMontage", &IInterface_Character::execPlayCharacterAnimationMontage },
 		{ "RequestCharacter", &IInterface_Character::execRequestCharacter },
+		{ "RequestHealthComponent", &IInterface_Character::execRequestHealthComponent },
 		{ "RequestMainCharacter", &IInterface_Character::execRequestMainCharacter },
 		{ "SetMainCharacterAnimState", &IInterface_Character::execSetMainCharacterAnimState },
 	};
@@ -431,6 +506,7 @@ struct Z_Construct_UClass_UInterface_Character_Statics
 		{ &Z_Construct_UFunction_UInterface_Character_PlayCharacterAnimationMontage, "PlayCharacterAnimationMontage" }, // 2327028697
 		{ &Z_Construct_UFunction_UInterface_Character_RequestCamera, "RequestCamera" }, // 3720369110
 		{ &Z_Construct_UFunction_UInterface_Character_RequestCharacter, "RequestCharacter" }, // 2422463470
+		{ &Z_Construct_UFunction_UInterface_Character_RequestHealthComponent, "RequestHealthComponent" }, // 2018110986
 		{ &Z_Construct_UFunction_UInterface_Character_RequestMainCharacter, "RequestMainCharacter" }, // 1139198535
 		{ &Z_Construct_UFunction_UInterface_Character_SetMainCharacterAnimState, "SetMainCharacterAnimState" }, // 907505221
 	};
@@ -481,10 +557,10 @@ UInterface_Character::~UInterface_Character() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UInterface_Character, UInterface_Character::StaticClass, TEXT("UInterface_Character"), &Z_Registration_Info_UClass_UInterface_Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInterface_Character), 3310042614U) },
+		{ Z_Construct_UClass_UInterface_Character, UInterface_Character::StaticClass, TEXT("UInterface_Character"), &Z_Registration_Info_UClass_UInterface_Character, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInterface_Character), 2026982009U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_2950536037(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_3383260935(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Character_Interface_Character_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

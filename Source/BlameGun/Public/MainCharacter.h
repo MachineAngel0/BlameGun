@@ -9,7 +9,6 @@
 #include "MainCharacter.generated.h"
 
 
-class UHealthComponent;
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCoinPickUp, int, Coins);
 
 
@@ -38,10 +37,8 @@ public:
 
 	
 
-	//actor components
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TObjectPtr<UHealthComponent> HealthComponent = nullptr;
+	//Actor Components
+	
 
 
 	//interfaces
@@ -56,6 +53,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EMainCharacterAnimState CharacterAnimationState = EMainCharacterAnimState::ECS_None;
 
+	virtual void ProcessDamage_Implementation(float DamageAmount) override;
 	
 	
 	// bad practice but I don't have an involved inventory system so it's fine

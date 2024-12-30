@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "BlameGun/Public/EnemyBase.h"
+#include "BlameGun/Public/Enemy/EnemyBase.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnemyBase() {}
 
@@ -30,11 +30,14 @@ struct Z_Construct_UClass_AEnemyBase_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "/**\n * Use if the enemy needs to have movement or character like movement\n */" },
 #endif
 		{ "HideCategories", "Navigation" },
-		{ "IncludePath", "EnemyBase.h" },
-		{ "ModuleRelativePath", "Public/EnemyBase.h" },
+		{ "IncludePath", "Enemy/EnemyBase.h" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Use if the enemy needs to have movement or character like movement" },
+#endif
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -75,20 +78,19 @@ template<> BLAMEGUN_API UClass* StaticClass<AEnemyBase>()
 {
 	return AEnemyBase::StaticClass();
 }
-AEnemyBase::AEnemyBase() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemyBase);
 AEnemyBase::~AEnemyBase() {}
 // End Class AEnemyBase
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_EnemyBase_h_Statics
+struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBase, AEnemyBase::StaticClass, TEXT("AEnemyBase"), &Z_Registration_Info_UClass_AEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBase), 1527189626U) },
+		{ Z_Construct_UClass_AEnemyBase, AEnemyBase::StaticClass, TEXT("AEnemyBase"), &Z_Registration_Info_UClass_AEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBase), 3125729618U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_EnemyBase_h_1887166721(TEXT("/Script/BlameGun"),
-	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_EnemyBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_EnemyBase_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_1778990261(TEXT("/Script/BlameGun"),
+	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

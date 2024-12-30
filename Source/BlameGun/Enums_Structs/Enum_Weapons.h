@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+
 UENUM(Blueprintable)
 enum class EWeaponBaseType: uint8
 {
@@ -8,3 +9,5 @@ enum class EWeaponBaseType: uint8
 	ECS_Melee,
 	
 };
+
+

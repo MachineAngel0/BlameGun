@@ -9,6 +9,7 @@
 #include "BlameGun/Enums_Structs/Enum_Character.h"
 #include "WeaponBase.generated.h"
 
+class UDamageInfoComponent;
 enum class EWeaponBaseType : uint8;
 class UFireRateComponent;
 class UProjectileSpawnerComponent;
@@ -26,7 +27,8 @@ public:
 
 	virtual AWeaponBase* RequestWeapon_Implementation() override;
 
-	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UDamageInfoComponent* DamageInfoComponent = nullptr;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent* WeaponSkeletalMesh;
