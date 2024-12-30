@@ -80,7 +80,7 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\CharacterBase.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\DamageComponent.cpp">
+    <ClCompile Include="..\..\Source\BlameGun\Private\DamageInfoComponent.cpp">
       <Filter>Source\BlameGun\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Interface_Damage.cpp">
@@ -121,6 +121,15 @@
     </Filter>
     <ClCompile Include="..\..\Source\BlameGun\Private\Inventory\ItemBase.cpp">
       <Filter>Source\BlameGun\Private\Inventory</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Private\ObjectPoolManager">
+      <UniqueIdentifier>{F3CA45D3-E66A-3427-8FC4-2D80353E3208}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\Interface_ObjectPool.cpp">
+      <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\ObjectPoolSubsystem.cpp">
+      <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\SaveLoadSystem">
       <UniqueIdentifier>{27908B69-A66C-3828-A5DE-A7230E1522F7}</UniqueIdentifier>
@@ -194,7 +203,7 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\CharacterBase.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\DamageComponent.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\DamageInfoComponent.h">
       <Filter>Source\BlameGun\Public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Interface_Damage.h">
@@ -235,6 +244,15 @@
     </Filter>
     <ClCompile Include="..\..\Source\BlameGun\Public\Inventory\ItemBase.h">
       <Filter>Source\BlameGun\Public\Inventory</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\ObjectPoolManager">
+      <UniqueIdentifier>{D1E49B1B-15D4-3A1E-BD40-1ED0DA3E4842}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\Interface_ObjectPool.h">
+      <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\ObjectPoolSubsystem.h">
+      <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\SaveLoadSystem">
       <UniqueIdentifier>{AA127325-13C9-32A5-8F80-3E000761AF20}</UniqueIdentifier>

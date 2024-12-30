@@ -4,6 +4,7 @@
 #include "Weapon/Shared/ProjectileActor.h"
 
 #include "Interface_Damage.h"
+#include "NiagaraComponent.h"
 #include "Components/SphereComponent.h"
 
 DEFINE_LOG_CATEGORY(Log_ProjectileActor);
@@ -15,8 +16,15 @@ AProjectileActor::AProjectileActor()
 	PrimaryActorTick.bCanEverTick = true;
 	SphereCollisionComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereCollision"));
 	SetRootComponent(SphereCollisionComponent);
+	
+	ProjectileMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ProjectileMesh"));
+	ProjectileMesh->SetupAttachment(SphereCollisionComponent);
 
 	SphereCollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &AProjectileActor::OnProjectileBeginOverlap);
+
+	NiagaraProjectile = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraProjectile"));
+	NiagaraProjectile->SetupAttachment(SphereCollisionComponent);
+	NiagaraProjectile->Deactivate();
 }
 
 // Called when the game starts or when spawned
@@ -33,8 +41,11 @@ void AProjectileActor::Tick(float DeltaTime)
 
 }
 
-inline void AProjectileActor::OnProjectileBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+
+
+
+void AProjectileActor::OnProjectileBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+                                                UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	UE_LOG(Log_ProjectileActor, Display, TEXT("ProjectileActor Hit: %s"), *OtherActor->GetName());
 	
