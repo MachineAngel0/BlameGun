@@ -7,6 +7,10 @@
         "Includes": [
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blamegun\\definitions.blamegun.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\weapon\\shared\\projectilespawnercomponent.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\weapon\\shared\\projectileactor.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\objectpoolmanager\\interface_objectpool.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\interface_objectpool.generated.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\projectileactor.generated.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\weapon\\weaponbasecomponent.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\weaponbasecomponent.generated.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\projectilespawnercomponent.generated.h"

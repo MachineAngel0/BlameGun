@@ -99,6 +99,7 @@ struct Z_Construct_UClass_UNormalShotComponent_Statics
 		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/NormalShotComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireRateInterval_MetaData[] = {
+		{ "Category", "NormalShotComponent" },
 		{ "ModuleRelativePath", "Public/Weapon/Gun/FireRate/NormalShotComponent.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CanFire_MetaData[] = {
@@ -133,7 +134,7 @@ struct Z_Construct_UClass_UNormalShotComponent_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UNormalShotComponent_Statics::NewProp_FireRateInterval = { "FireRateInterval", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UNormalShotComponent, FireRateInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FireRateInterval_MetaData), NewProp_FireRateInterval_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UNormalShotComponent_Statics::NewProp_FireRateInterval = { "FireRateInterval", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UNormalShotComponent, FireRateInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FireRateInterval_MetaData), NewProp_FireRateInterval_MetaData) };
 void Z_Construct_UClass_UNormalShotComponent_Statics::NewProp_CanFire_SetBit(void* Obj)
 {
 	((UNormalShotComponent*)Obj)->CanFire = 1;
@@ -196,10 +197,10 @@ UNormalShotComponent::~UNormalShotComponent() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_NormalShotComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UNormalShotComponent, UNormalShotComponent::StaticClass, TEXT("UNormalShotComponent"), &Z_Registration_Info_UClass_UNormalShotComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UNormalShotComponent), 4073770487U) },
+		{ Z_Construct_UClass_UNormalShotComponent, UNormalShotComponent::StaticClass, TEXT("UNormalShotComponent"), &Z_Registration_Info_UClass_UNormalShotComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UNormalShotComponent), 579871512U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_NormalShotComponent_h_437472197(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_NormalShotComponent_h_1039012348(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_NormalShotComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Gun_FireRate_NormalShotComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

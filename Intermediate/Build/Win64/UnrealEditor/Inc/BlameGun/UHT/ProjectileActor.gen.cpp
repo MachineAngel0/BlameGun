@@ -13,7 +13,6 @@ void EmptyLinkFunctionForGeneratedCodeProjectileActor() {}
 // Begin Cross Module References
 BLAMEGUN_API UClass* Z_Construct_UClass_AProjectileActor();
 BLAMEGUN_API UClass* Z_Construct_UClass_AProjectileActor_NoRegister();
-BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_ObjectPool_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EBulletType();
 BLAMEGUN_API UScriptStruct* Z_Construct_UScriptStruct_FProjectileInfo();
@@ -21,8 +20,10 @@ ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 NIAGARA_API UClass* Z_Construct_UClass_UNiagaraComponent_NoRegister();
 NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 UPackage* Z_Construct_UPackage__Script_BlameGun();
@@ -84,6 +85,7 @@ UEnum* Z_Construct_UEnum_BlameGun_EBulletType()
 // End Enum EBulletType
 
 // Begin ScriptStruct FProjectileInfo
+static_assert(std::is_polymorphic<FProjectileInfo>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FProjectileInfo cannot be polymorphic unless super FTableRowBase is polymorphic");
 static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_ProjectileInfo;
 class UScriptStruct* FProjectileInfo::StaticStruct()
 {
@@ -104,12 +106,11 @@ struct Z_Construct_UScriptStruct_FProjectileInfo_Statics
 		{ "BlueprintType", "true" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Mesh_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StaticMesh_MetaData[] = {
 		{ "Category", "ProjectileInfo" },
-		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponOwner_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NiagaraSystem_MetaData[] = {
 		{ "Category", "ProjectileInfo" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
 	};
@@ -125,6 +126,10 @@ struct Z_Construct_UScriptStruct_FProjectileInfo_Statics
 		{ "Category", "ProjectileInfo" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ForAlly_MetaData[] = {
+		{ "Category", "ProjectileInfo" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DestroyOnOverlap_MetaData[] = {
 		{ "Category", "ProjectileInfo" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
@@ -133,20 +138,18 @@ struct Z_Construct_UScriptStruct_FProjectileInfo_Statics
 		{ "Category", "ProjectileInfo" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NiagaraSystem_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_Mesh;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponOwner;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_NiagaraSystem;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_LineTraceDistance;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ProjectileLifeTime;
+	static void NewProp_ForAlly_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ForAlly;
 	static void NewProp_DestroyOnOverlap_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_DestroyOnOverlap;
 	static void NewProp_DealDamage_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_DealDamage;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_NiagaraSystem;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static void* NewStructOps()
 	{
@@ -154,11 +157,16 @@ struct Z_Construct_UScriptStruct_FProjectileInfo_Statics
 	}
 	static const UECodeGen_Private::FStructParams StructParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, Mesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Mesh_MetaData), NewProp_Mesh_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_WeaponOwner = { "WeaponOwner", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, WeaponOwner), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponOwner_MetaData), NewProp_WeaponOwner_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DamageAmount_MetaData), NewProp_DamageAmount_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, StaticMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StaticMesh_MetaData), NewProp_StaticMesh_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_NiagaraSystem = { "NiagaraSystem", nullptr, (EPropertyFlags)0x0114000000000005, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, NiagaraSystem), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NiagaraSystem_MetaData), NewProp_NiagaraSystem_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DamageAmount_MetaData), NewProp_DamageAmount_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_LineTraceDistance = { "LineTraceDistance", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, LineTraceDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LineTraceDistance_MetaData), NewProp_LineTraceDistance_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_ProjectileLifeTime = { "ProjectileLifeTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, ProjectileLifeTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileLifeTime_MetaData), NewProp_ProjectileLifeTime_MetaData) };
+void Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_ForAlly_SetBit(void* Obj)
+{
+	((FProjectileInfo*)Obj)->ForAlly = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_ForAlly = { "ForAlly", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FProjectileInfo), &Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_ForAlly_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ForAlly_MetaData), NewProp_ForAlly_MetaData) };
 void Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DestroyOnOverlap_SetBit(void* Obj)
 {
 	((FProjectileInfo*)Obj)->DestroyOnOverlap = 1;
@@ -169,21 +177,20 @@ void Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DealDamage_SetBi
 	((FProjectileInfo*)Obj)->DealDamage = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DealDamage = { "DealDamage", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(FProjectileInfo), &Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DealDamage_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DealDamage_MetaData), NewProp_DealDamage_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_NiagaraSystem = { "NiagaraSystem", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileInfo, NiagaraSystem), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NiagaraSystem_MetaData), NewProp_NiagaraSystem_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FProjectileInfo_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_Mesh,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_WeaponOwner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_StaticMesh,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_NiagaraSystem,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DamageAmount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_LineTraceDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_ProjectileLifeTime,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_ForAlly,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DestroyOnOverlap,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_DealDamage,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewProp_NiagaraSystem,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FProjectileInfo_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FProjectileInfo_Statics::StructParams = {
 	(UObject* (*)())Z_Construct_UPackage__Script_BlameGun,
-	nullptr,
+	Z_Construct_UScriptStruct_FTableRowBase,
 	&NewStructOps,
 	"ProjectileInfo",
 	Z_Construct_UScriptStruct_FProjectileInfo_Statics::PropPointers,
@@ -191,7 +198,7 @@ const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FProjectileInfo
 	sizeof(FProjectileInfo),
 	alignof(FProjectileInfo),
 	RF_Public|RF_Transient|RF_MarkAsNative,
-	EStructFlags(0x00000005),
+	EStructFlags(0x00000001),
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FProjectileInfo_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FProjectileInfo_Statics::Struct_MetaDataParams)
 };
 UScriptStruct* Z_Construct_UScriptStruct_FProjectileInfo()
@@ -285,12 +292,58 @@ DEFINE_FUNCTION(AProjectileActor::execOnProjectileBeginOverlap)
 }
 // End Class AProjectileActor Function OnProjectileBeginOverlap
 
+// Begin Class AProjectileActor Function SetProjectileStruct
+struct Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics
+{
+	struct ProjectileActor_eventSetProjectileStruct_Parms
+	{
+		FProjectileInfo NewProjectileInfo;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NewProjectileInfo_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_NewProjectileInfo;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::NewProp_NewProjectileInfo = { "NewProjectileInfo", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileActor_eventSetProjectileStruct_Parms, NewProjectileInfo), Z_Construct_UScriptStruct_FProjectileInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NewProjectileInfo_MetaData), NewProp_NewProjectileInfo_MetaData) }; // 3167401113
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::NewProp_NewProjectileInfo,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AProjectileActor, nullptr, "SetProjectileStruct", nullptr, nullptr, Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::PropPointers), sizeof(Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::ProjectileActor_eventSetProjectileStruct_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::Function_MetaDataParams), Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::ProjectileActor_eventSetProjectileStruct_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AProjectileActor_SetProjectileStruct()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AProjectileActor_SetProjectileStruct_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AProjectileActor::execSetProjectileStruct)
+{
+	P_GET_STRUCT(FProjectileInfo,Z_Param_NewProjectileInfo);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetProjectileStruct(Z_Param_NewProjectileInfo);
+	P_NATIVE_END;
+}
+// End Class AProjectileActor Function SetProjectileStruct
+
 // Begin Class AProjectileActor
 void AProjectileActor::StaticRegisterNativesAProjectileActor()
 {
 	UClass* Class = AProjectileActor::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnProjectileBeginOverlap", &AProjectileActor::execOnProjectileBeginOverlap },
+		{ "SetProjectileStruct", &AProjectileActor::execSetProjectileStruct },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -325,10 +378,6 @@ struct Z_Construct_UClass_AProjectileActor_Statics
 		{ "Category", "ProjectileActor" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponOwner_MetaData[] = {
-		{ "Category", "ProjectileActor" },
-		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DamageAmount_MetaData[] = {
 		{ "Category", "ProjectileActor" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileActor.h" },
@@ -354,7 +403,6 @@ struct Z_Construct_UClass_AProjectileActor_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileMesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_NiagaraProjectile;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ProjectileInfo;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponOwner;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageAmount;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_LineTraceDistance;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ProjectileLifeTime;
@@ -366,6 +414,7 @@ struct Z_Construct_UClass_AProjectileActor_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AProjectileActor_OnProjectileBeginOverlap, "OnProjectileBeginOverlap" }, // 2864317778
+		{ &Z_Construct_UFunction_AProjectileActor_SetProjectileStruct, "SetProjectileStruct" }, // 184893451
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -377,8 +426,7 @@ struct Z_Construct_UClass_AProjectileActor_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_SphereCollisionComponent = { "SphereCollisionComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, SphereCollisionComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SphereCollisionComponent_MetaData), NewProp_SphereCollisionComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileMesh = { "ProjectileMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, ProjectileMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileMesh_MetaData), NewProp_ProjectileMesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_NiagaraProjectile = { "NiagaraProjectile", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, NiagaraProjectile), Z_Construct_UClass_UNiagaraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NiagaraProjectile_MetaData), NewProp_NiagaraProjectile_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileInfo = { "ProjectileInfo", nullptr, (EPropertyFlags)0x0010008000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, ProjectileInfo), Z_Construct_UScriptStruct_FProjectileInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileInfo_MetaData), NewProp_ProjectileInfo_MetaData) }; // 72554804
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_WeaponOwner = { "WeaponOwner", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, WeaponOwner), Z_Construct_UClass_AWeaponBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponOwner_MetaData), NewProp_WeaponOwner_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileInfo = { "ProjectileInfo", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, ProjectileInfo), Z_Construct_UScriptStruct_FProjectileInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileInfo_MetaData), NewProp_ProjectileInfo_MetaData) }; // 3167401113
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_DamageAmount = { "DamageAmount", nullptr, (EPropertyFlags)0x0010000000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, DamageAmount), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DamageAmount_MetaData), NewProp_DamageAmount_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_LineTraceDistance = { "LineTraceDistance", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, LineTraceDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LineTraceDistance_MetaData), NewProp_LineTraceDistance_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileLifeTime = { "ProjectileLifeTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AProjectileActor, ProjectileLifeTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileLifeTime_MetaData), NewProp_ProjectileLifeTime_MetaData) };
@@ -397,7 +445,6 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AProjecti
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_NiagaraProjectile,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileInfo,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_WeaponOwner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_DamageAmount,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_LineTraceDistance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectileActor_Statics::NewProp_ProjectileLifeTime,
@@ -451,13 +498,13 @@ struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shar
 		{ EBulletType_StaticEnum, TEXT("EBulletType"), &Z_Registration_Info_UEnum_EBulletType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3671096832U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FProjectileInfo::StaticStruct, Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewStructOps, TEXT("ProjectileInfo"), &Z_Registration_Info_UScriptStruct_ProjectileInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FProjectileInfo), 72554804U) },
+		{ FProjectileInfo::StaticStruct, Z_Construct_UScriptStruct_FProjectileInfo_Statics::NewStructOps, TEXT("ProjectileInfo"), &Z_Registration_Info_UScriptStruct_ProjectileInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FProjectileInfo), 3167401113U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AProjectileActor, AProjectileActor::StaticClass, TEXT("AProjectileActor"), &Z_Registration_Info_UClass_AProjectileActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectileActor), 1339577413U) },
+		{ Z_Construct_UClass_AProjectileActor, AProjectileActor::StaticClass, TEXT("AProjectileActor"), &Z_Registration_Info_UClass_AProjectileActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectileActor), 3126754852U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_1392092840(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_2663698395(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_Statics::EnumInfo));

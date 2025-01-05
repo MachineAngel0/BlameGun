@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeBlameGun_init() {}
 	BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_MovementEvent__DelegateSignature();
 	BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature();
 	BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_OnDeath__DelegateSignature();
+	BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature();
 	BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_OnHealthChanged__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_BlameGun;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_BlameGun()
@@ -24,6 +25,7 @@ void EmptyLinkFunctionForGeneratedCodeBlameGun_init() {}
 				(UObject* (*)())Z_Construct_UDelegateFunction_BlameGun_MovementEvent__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BlameGun_OnCoinPickUp__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BlameGun_OnDeath__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_BlameGun_OnHealthChanged__DelegateSignature,
 			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
@@ -31,13 +33,13 @@ void EmptyLinkFunctionForGeneratedCodeBlameGun_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x76954DD1,
-				0x66263CD4,
+				0x451F906A,
+				0xEEC8A3A1,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_BlameGun.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_BlameGun.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BlameGun(Z_Construct_UPackage__Script_BlameGun, TEXT("/Script/BlameGun"), Z_Registration_Info_UPackage__Script_BlameGun, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x76954DD1, 0x66263CD4));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BlameGun(Z_Construct_UPackage__Script_BlameGun, TEXT("/Script/BlameGun"), Z_Registration_Info_UPackage__Script_BlameGun, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x451F906A, 0xEEC8A3A1));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

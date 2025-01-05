@@ -7,6 +7,8 @@
         "Includes": [
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blamegun\\definitions.blamegun.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\weapon\\weaponbase.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\interface_damage.h",
+            "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\interface_damage.generated.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\enums_structs\\enum_weapons.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\source\\blamegun\\public\\weapon\\interface_weapon.h",
             "c:\\users\\adams humbert\\documents\\unreal projects\\blamegun 5.5\\intermediate\\build\\win64\\unrealeditor\\inc\\blamegun\\uht\\interface_weapon.generated.h",

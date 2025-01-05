@@ -26,7 +26,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float BaseDamage = 100.0f;
-	
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
 	float ReturnDamageAmount();
 
 	UFUNCTION(BlueprintCallable)

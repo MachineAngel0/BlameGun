@@ -28,17 +28,17 @@ enum class EBulletType: uint8
 
 
 USTRUCT(BlueprintType)
-struct FProjectileInfo
+struct FProjectileInfo: public FTableRowBase
 {
 	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UStaticMeshComponent* Mesh;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	AWeaponBase* WeaponOwner = nullptr;
+	UStaticMesh* StaticMesh = nullptr;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UNiagaraSystem> NiagaraSystem = nullptr;
+		
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	float DamageAmount = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -48,13 +48,15 @@ struct FProjectileInfo
 	float ProjectileLifeTime = 5.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool DestroyOnOverlap = false;
+	bool ForAlly = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	bool DestroyOnOverlap = true;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool DealDamage = true;
 
-	UPROPERTY()
-	UNiagaraSystem* NiagaraSystem = nullptr;
 };
+
+
 
 DECLARE_LOG_CATEGORY_EXTERN(Log_ProjectileActor, Log, All);
 
@@ -91,9 +93,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FProjectileInfo ProjectileInfo;
 	
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	AWeaponBase* WeaponOwner = nullptr;
+	UFUNCTION(BlueprintCallable)
+	void SetProjectileStruct(const FProjectileInfo NewProjectileInfo);
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float DamageAmount = 0.0f;

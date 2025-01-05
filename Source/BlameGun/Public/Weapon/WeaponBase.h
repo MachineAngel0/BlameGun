@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Interface_Damage.h"
 #include "BlameGun/Enums_Structs/Enum_Weapons.h"
 #include "GameFramework/Actor.h"
 #include "Interface_Weapon.h"
@@ -16,7 +17,7 @@ class UProjectileSpawnerComponent;
 
 
 UCLASS(Abstract)
-class BLAMEGUN_API AWeaponBase : public AActor, public IInterface_Weapon
+class BLAMEGUN_API AWeaponBase : public AActor, public IInterface_Weapon, public IInterface_Damage
 {
 	GENERATED_BODY()
 	
@@ -29,6 +30,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDamageInfoComponent* DamageInfoComponent = nullptr;
+	virtual UDamageInfoComponent* RequestDamageComponent_Implementation() override;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USkeletalMeshComponent* WeaponSkeletalMesh;

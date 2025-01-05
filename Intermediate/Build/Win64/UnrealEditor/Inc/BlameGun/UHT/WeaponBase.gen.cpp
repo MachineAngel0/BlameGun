@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase();
 BLAMEGUN_API UClass* Z_Construct_UClass_AWeaponBase_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UDamageInfoComponent_NoRegister();
+BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Damage_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_Weapon_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EMainCharacterAnimState();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EWeaponBaseType();
@@ -290,6 +291,7 @@ UObject* (*const Z_Construct_UClass_AWeaponBase_Statics::DependentSingletons[])(
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AWeaponBase_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AWeaponBase_Statics::InterfaceParams[] = {
 	{ Z_Construct_UClass_UInterface_Weapon_NoRegister, (int32)VTABLE_OFFSET(AWeaponBase, IInterface_Weapon), false },  // 1314497110
+	{ Z_Construct_UClass_UInterface_Damage_NoRegister, (int32)VTABLE_OFFSET(AWeaponBase, IInterface_Damage), false },  // 1067797853
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AWeaponBase_Statics::ClassParams = {
 	&AWeaponBase::StaticClass,
@@ -326,10 +328,10 @@ AWeaponBase::~AWeaponBase() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWeaponBase, AWeaponBase::StaticClass, TEXT("AWeaponBase"), &Z_Registration_Info_UClass_AWeaponBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeaponBase), 2324741622U) },
+		{ Z_Construct_UClass_AWeaponBase, AWeaponBase::StaticClass, TEXT("AWeaponBase"), &Z_Registration_Info_UClass_AWeaponBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWeaponBase), 3075307396U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_1476165707(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_106736433(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

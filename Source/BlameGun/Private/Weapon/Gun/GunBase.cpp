@@ -85,7 +85,7 @@ void AGunBase::StartWeaponAttack()
 		UE_LOG(LogTemp, Warning, TEXT("Hello %s"), *PlayerCharacter->GetName());
 		PlayerCharacter->PlayCharacterAnimationMontage_Implementation(AttackMontage);
 		
-		ProjectileSpawnerComponent->SpawnProjectile();
+		ProjectileSpawnerComponent->SpawnProjectileFromPool();
 		//ProjectileSpawnerComponent->SpawnProjectileTest(ProjectileSpawnerComponent->WeaponLineTrace());
 	}
 	

@@ -12,6 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\BlameGun.sln.DotSettings.user" />
     <None Include="..\..\contents.txt" />
     <None Include="..\..\manifest.json" />
     <Filter Include="Config">
@@ -53,6 +54,12 @@
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Character.h">
       <Filter>Source\BlameGun\Enums_Structs</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Enemy.cpp">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Enemy.h">
+      <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Enum_Generic.cpp">
       <Filter>Source\BlameGun\Enums_Structs</Filter>
     </ClCompile>
@@ -70,6 +77,15 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Enums_Structs\Struct_Weapons.h">
       <Filter>Source\BlameGun\Enums_Structs</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\FunctionLibrary">
+      <UniqueIdentifier>{7F0F17EB-C0B9-3862-A26F-13B51B6E2173}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\FunctionLibrary\AIFunctionLibrary.cpp">
+      <Filter>Source\BlameGun\FunctionLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\FunctionLibrary\AIFunctionLibrary.h">
+      <Filter>Source\BlameGun\FunctionLibrary</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private">
       <UniqueIdentifier>{2043D5DC-6DF0-3261-A74F-975AB88E0F0B}</UniqueIdentifier>
@@ -107,6 +123,9 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\Interface_Character.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Character\Interface_MainCharacter.cpp">
+      <Filter>Source\BlameGun\Private\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Character\SprintComponent.cpp">
       <Filter>Source\BlameGun\Private\Character</Filter>
     </ClCompile>
@@ -115,6 +134,21 @@
     </Filter>
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\EnemyBase.cpp">
       <Filter>Source\BlameGun\Private\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\FlyToLocation.cpp">
+      <Filter>Source\BlameGun\Private\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\FlyToLocation.h">
+      <Filter>Source\BlameGun\Private\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Interface_EnemyAI.cpp">
+      <Filter>Source\BlameGun\Private\Enemy</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Private\Enemy\Flying">
+      <UniqueIdentifier>{46E69B6E-27F1-3F21-8792-A144C5D81AA1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Flying\FlyingComponent.cpp">
+      <Filter>Source\BlameGun\Private\Enemy\Flying</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Inventory">
       <UniqueIdentifier>{04B9198E-E034-3986-ACB1-222EAAE66E09}</UniqueIdentifier>
@@ -125,10 +159,16 @@
     <Filter Include="Source\BlameGun\Private\ObjectPoolManager">
       <UniqueIdentifier>{F3CA45D3-E66A-3427-8FC4-2D80353E3208}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\FlyingManagerSubsystem.cpp">
+      <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\Interface_ObjectPool.cpp">
       <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\ObjectPoolSubsystem.cpp">
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\ObjectPoolBaseSubsystem.cpp">
+      <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\ProjectilePoolSubsystem.cpp">
       <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\SaveLoadSystem">
@@ -230,6 +270,9 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_Character.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Character\Interface_MainCharacter.h">
+      <Filter>Source\BlameGun\Public\Character</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Character\SprintComponent.h">
       <Filter>Source\BlameGun\Public\Character</Filter>
     </ClCompile>
@@ -238,6 +281,15 @@
     </Filter>
     <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\EnemyBase.h">
       <Filter>Source\BlameGun\Public\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Interface_EnemyAI.h">
+      <Filter>Source\BlameGun\Public\Enemy</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Enemy\Flying">
+      <UniqueIdentifier>{7244C537-9FB1-3B8F-B4FB-523EB784E15A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Flying\FlyingComponent.h">
+      <Filter>Source\BlameGun\Public\Enemy\Flying</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\Inventory">
       <UniqueIdentifier>{0D8D30F1-2E45-3D60-8501-744A1394EDC0}</UniqueIdentifier>
@@ -248,10 +300,16 @@
     <Filter Include="Source\BlameGun\Public\ObjectPoolManager">
       <UniqueIdentifier>{D1E49B1B-15D4-3A1E-BD40-1ED0DA3E4842}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\FlyingManagerSubsystem.h">
+      <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\Interface_ObjectPool.h">
       <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\ObjectPoolSubsystem.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\ObjectPoolBaseSubsystem.h">
+      <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\ProjectilePoolSubsystem.h">
       <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Public\SaveLoadSystem">

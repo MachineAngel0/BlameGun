@@ -56,6 +56,11 @@ AWeaponBase* AWeaponBase::RequestWeapon_Implementation()
 	return this;
 }
 
+UDamageInfoComponent* AWeaponBase::RequestDamageComponent_Implementation()
+{
+	return DamageInfoComponent;
+}
+
 USkeletalMeshComponent* AWeaponBase::GetWeaponSkeletalMesh() const
 {
 	return WeaponSkeletalMesh;

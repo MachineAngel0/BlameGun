@@ -13,7 +13,7 @@ class AWeaponBase;
  * functionality for anything that wishes to access a weapon owner
  */
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable )
 class BLAMEGUN_API UWeaponBaseComponent : public UActorComponent
 {
 	GENERATED_BODY()

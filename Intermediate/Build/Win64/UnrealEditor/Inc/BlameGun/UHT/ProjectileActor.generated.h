@@ -12,6 +12,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class UPrimitiveComponent;
 struct FHitResult;
+struct FProjectileInfo;
 #ifdef BLAMEGUN_ProjectileActor_generated_h
 #error "ProjectileActor.generated.h already included, missing '#pragma once' in ProjectileActor.h"
 #endif
@@ -19,16 +20,18 @@ struct FHitResult;
 
 #define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_33_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FProjectileInfo_Statics; \
-	BLAMEGUN_API static class UScriptStruct* StaticStruct();
+	BLAMEGUN_API static class UScriptStruct* StaticStruct(); \
+	typedef FTableRowBase Super;
 
 
 template<> BLAMEGUN_API UScriptStruct* StaticStruct<struct FProjectileInfo>();
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSetProjectileStruct); \
 	DECLARE_FUNCTION(execOnProjectileBeginOverlap);
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAProjectileActor(); \
 	friend struct Z_Construct_UClass_AProjectileActor_Statics; \
@@ -38,7 +41,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AProjectileActor*>(this); }
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AProjectileActor(AProjectileActor&&); \
@@ -50,13 +53,13 @@ public: \
 	NO_API virtual ~AProjectileActor();
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_61_PROLOG
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_63_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_64_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileActor_h_66_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

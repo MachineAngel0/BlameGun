@@ -6,10 +6,12 @@
 #include "ObjectPoolBaseSubsystem.h"
 #include "ProjectilePoolSubsystem.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(Log_ProjectilePoolSubsystem, Log, All);
+
 struct FProjectileInfo;
 
 USTRUCT(BlueprintType)
-struct FMyStruct
+struct FProjectilePoolInfo
 {
 	GENERATED_BODY()
 
@@ -18,8 +20,7 @@ struct FMyStruct
 	TArray<AProjectileActor*> ProjectileArray;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	int CreationAmount;
-
+	int CreationAmount = 10;
 };
 
 
@@ -31,21 +32,19 @@ class BLAMEGUN_API UProjectilePoolSubsystem : public UObjectPoolBaseSubsystem
 {
 	GENERATED_BODY()
 
-
 public:
-
 	virtual void InstantiatePool() override;
-	
+
+	void InstantiateProjectiles(const TSubclassOf<AProjectileActor>& ProjectileClass,
+	                            FProjectilePoolInfo& ProjectileInfo) const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TMap<TSubclassOf<AProjectileActor>, FMyStruct> PoolMap;
+	TMap<TSubclassOf<AProjectileActor>, FProjectilePoolInfo> PoolMap;
 
 	UFUNCTION(BlueprintCallable)
-	bool DoesProjectileExistInMap(TSubclassOf<AProjectileActor> ProjectileClass);
+	bool DoesProjectileExistInMap(const TSubclassOf<AProjectileActor> ProjectileClass) const;
 
 	UFUNCTION(BlueprintCallable)
-	void SpawnFromPool(TSubclassOf<AProjectileActor> ProjectileClass, FProjectileInfo ProjectileInfo, FTransform SpawnTransform);
-	
-	
+	void SpawnFromPool(TSubclassOf<AProjectileActor> ProjectileClass, FProjectileInfo ProjectileInfo,
+	                   FTransform SpawnTransform, bool InstantiateIfNotFound = false);
 };
-

@@ -7,6 +7,7 @@
 
 #include "Interface_Character.generated.h"
 
+class AEnemyBase;
 class UHealthComponent;
 class AMainCharacter;
 enum class EMainCharacterAnimState : uint8;
@@ -34,6 +35,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	AMainCharacter* RequestMainCharacter();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	AEnemyBase* RequestEnemyBase();
 	
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	UCameraComponent* RequestCamera();

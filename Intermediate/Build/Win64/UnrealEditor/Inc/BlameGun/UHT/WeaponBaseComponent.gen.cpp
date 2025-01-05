@@ -31,11 +31,13 @@ struct Z_Construct_UClass_UWeaponBaseComponent_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintSpawnableComponent", "" },
+		{ "BlueprintType", "true" },
 		{ "ClassGroupNames", "Custom" },
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/*\n * functionality for anything that wishes to access a weapon owner\n */" },
 #endif
 		{ "IncludePath", "Weapon/WeaponBaseComponent.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "Public/Weapon/WeaponBaseComponent.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "* functionality for anything that wishes to access a weapon owner" },
@@ -99,10 +101,10 @@ UWeaponBaseComponent::~UWeaponBaseComponent() {}
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UWeaponBaseComponent, UWeaponBaseComponent::StaticClass, TEXT("UWeaponBaseComponent"), &Z_Registration_Info_UClass_UWeaponBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UWeaponBaseComponent), 816819731U) },
+		{ Z_Construct_UClass_UWeaponBaseComponent, UWeaponBaseComponent::StaticClass, TEXT("UWeaponBaseComponent"), &Z_Registration_Info_UClass_UWeaponBaseComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UWeaponBaseComponent), 209316851U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_83129058(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_3618829837(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_WeaponBaseComponent_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

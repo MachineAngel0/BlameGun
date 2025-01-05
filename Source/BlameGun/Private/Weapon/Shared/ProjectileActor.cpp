@@ -59,6 +59,12 @@ void AProjectileActor::OnProjectileBeginOverlap(UPrimitiveComponent* OverlappedC
 	
 	if (DestroyOnOverlap)
 	{
-		Destroy();
+		Execute_ReleaseInUse(this);
 	}
+}
+
+void AProjectileActor::SetProjectileStruct(const FProjectileInfo NewProjectileInfo)
+{
+	ProjectileInfo = NewProjectileInfo;
+	//TODO: set the objects
 }

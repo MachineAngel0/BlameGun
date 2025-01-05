@@ -5,10 +5,7 @@
 
 #include "DamageInfoComponent.h"
 #include "Interface_Damage.h"
-#include "Character/Interface_Character.h"
-#include "Kismet/GameplayStatics.h"
-#include "Kismet/KismetMathLibrary.h"
-#include "Weapon/WeaponBase.h"
+#include "ObjectPoolManager/ProjectilePoolSubsystem.h"
 #include "Weapon/Shared/ProjectileActor.h"
 
 
@@ -22,15 +19,6 @@ UProjectileSpawnerComponent::UProjectileSpawnerComponent()
 	// ...
 }
 
-
-// Called when the game starts
-void UProjectileSpawnerComponent::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-
 // Called every frame
 void UProjectileSpawnerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -40,81 +28,128 @@ void UProjectileSpawnerComponent::TickComponent(float DeltaTime, ELevelTick Tick
 }
 
 
-
-void UProjectileSpawnerComponent::SpawnProjectile()
+// Called when the game starts
+void UProjectileSpawnerComponent::BeginPlay()
 {
+	Super::BeginPlay();
 
+	ReadProjectileTypeDataTable();
+	ReadProjectileInfoDataTable();
+
+}
+
+
+
+void UProjectileSpawnerComponent::ReadProjectileTypeDataTable()
+{
+	if (ProjectileType_DT.IsNull())
+	{
+		UE_LOG(LogTemp, Error, TEXT("Invalid Data Table For ProjectileSpawner Component, Ability Owner: %s"), *GetOwner()->GetName());
+	}
+	if (const auto& DataTableInfo = ProjectileType_DT.GetRow<FProjectileTypeParams>(""))
+	{
+		UE_LOG(LogTemp, Display, TEXT("Found Data Row %s"), *this->GetName());
+		ProjectileTypeParams = *DataTableInfo;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Invalid Row, For ProjectileTypeParams, Ability Owner: %s"), *GetOwner()->GetName());
+	}
+	
+}
+
+
+void UProjectileSpawnerComponent::ReadProjectileInfoDataTable()
+{
+	if (ProjectileInfo_DT.IsNull())
+	{
+		UE_LOG(LogTemp, Error, TEXT("Invalid Data Table For ProjectileSpawner Component, Ability Owner: %s"), *GetOwner()->GetName());
+	}
+
+
+	if (const auto& DataTableInfo = ProjectileInfo_DT.GetRow<FProjectileInfo>(""))
+	{
+		UE_LOG(LogTemp, Display, TEXT("Found Data Row %s"), *this->GetName());
+		ProjectileInfo = *DataTableInfo;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Invalid Row, For Damage Component, Ability Owner: %s"), *GetOwner()->GetName());
+	}
+
+
+	//set damage amount, as we are to obtain it from the weapon/actor
+	const bool HasInterface = GetOwner()->GetClass()->ImplementsInterface(UInterface_Damage::StaticClass());
+	if (HasInterface)
+	{
+		UDamageInfoComponent* DamageInfo = IInterface_Damage::Execute_RequestDamageComponent(GetOwner());
+		if (DamageInfo)
+		{
+			ProjectileInfo.DamageAmount = DamageInfo->ReturnDamageAmount();
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("No DamageComponent"));
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Invalid Interface"));
+	}
+}
+
+void UProjectileSpawnerComponent::SpawnProjectileFromPool()
+{
 	UE_LOG(LogTemp, Warning, TEXT("SpawnProjectileCalled"));
 
 	if (!GetWorld())
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Invalid World"));
+		return;
 	}
-	if (!ProjectileReference)
+	if (!ProjectileTypeParams.ProjectileReference)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Invalid ProjectileReference"));
+		return;
 	}
 
+	//might just want to set this once, if we ever need to switch this at runtime, we can make a custom function
+	TransformArrayForSpawning.Empty();
+	switch (ProjectileTypeParams.TransformType)
+	{
+	case EProjectileTransformType::ECS_Default:
+		TransformForSpawning = ActorLineTrace();
+		break;
+	case EProjectileTransformType::ECS_Weapon:
+		TransformForSpawning = WeaponLineTrace();
+		break;
+	case EProjectileTransformType::ECS_Actor:
+		TransformForSpawning = ActorLineTrace();
+		break;
+	}
 
-	//AProjectileActor* ProjectileActor = GetWorld()->SpawnActor<AProjectileActor>(ProjectileReference, WeaponLineTrace());
-	AProjectileActor* ProjectileActor = GetWorld()->SpawnActorDeferred<AProjectileActor>(ProjectileReference, WeaponLineTrace());
-	ProjectileActor->WeaponOwner = this->WeaponOwner;
-	ProjectileActor->DamageAmount = this->WeaponOwner->DamageInfoComponent->ReturnDamageAmount();
-	UGameplayStatics::FinishSpawningActor(ProjectileActor, WeaponLineTrace());
-		
+	switch (ProjectileTypeParams.ProjectilePattern)
+	{
+		case EProjectilePattern::ECS_Default:
+			TransformArrayForSpawning.Add(TransformForSpawning);
+			break;
+		case EProjectilePattern::ECS_Triangle:
+			TransformArrayForSpawning.Append(TrianglePattern(100));
+			break;
+		case EProjectilePattern::ECS_Circle:
+			TransformArrayForSpawning.Append(CirclePatternSpawner(8, 100));
+			break;
+		case EProjectilePattern::ECS_CircleFacingTarget:
+			TransformArrayForSpawning.Append(CircleFacingTargetPattern(8, 100));
+			break;
+	}
 	
 	
-
+	UProjectilePoolSubsystem* ProjectilePoolSubsystem = GetWorld()->GetSubsystem<UProjectilePoolSubsystem>();
+	for (const auto& Transform: TransformArrayForSpawning)
+	{
+		ProjectilePoolSubsystem->SpawnFromPool(ProjectileTypeParams.ProjectileReference, ProjectileInfo, Transform, false);
+	}
+	
 	
 }
-
-void UProjectileSpawnerComponent::SpawnProjectileAtActorLocation()
-{
-
-	AProjectileActor* ProjectileActor = GetWorld()->SpawnActorDeferred<AProjectileActor>(ProjectileReference, ActorLineTrace());
-	const bool HasInterface = GetOwner()->GetClass()->ImplementsInterface(UInterface_Damage::StaticClass());
-	if (HasInterface)
-	{
-		UDamageInfoComponent* DamageInfo= IInterface_Damage::Execute_RequestDamageComponent(GetOwner());
-		if (DamageInfo)
-		{
-			ProjectileActor->DamageAmount = DamageInfo->ReturnDamageAmount();
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("No DamageComponent"));
-		}
-		
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Invalid Interface"));
-	}
-	UGameplayStatics::FinishSpawningActor(ProjectileActor, ActorLineTrace());
-	
-}
-
-void UProjectileSpawnerComponent::SpawnProjectileAtLocation(FTransform Transform)
-{
-	AProjectileActor* ProjectileActor = GetWorld()->SpawnActorDeferred<AProjectileActor>(ProjectileReference, Transform);
-	const bool HasInterface = GetOwner()->GetClass()->ImplementsInterface(UInterface_Damage::StaticClass());
-	if (HasInterface)
-	{
-		UDamageInfoComponent* DamageInfo= IInterface_Damage::Execute_RequestDamageComponent(GetOwner());
-		if (DamageInfo)
-		{
-			ProjectileActor->DamageAmount = DamageInfo->ReturnDamageAmount();
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("No DamageComponent"));
-		}
-		
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Invalid Interface"));
-	}
-	UGameplayStatics::FinishSpawningActor(ProjectileActor, Transform);
-}
-

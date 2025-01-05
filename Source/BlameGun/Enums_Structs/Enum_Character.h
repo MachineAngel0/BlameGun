@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-UENUM(Blueprintable)
+UENUM(Blueprintable, BlueprintType)
 enum class ECharacterMovementState: uint8
 {
 	ECS_None,
@@ -10,7 +10,7 @@ enum class ECharacterMovementState: uint8
 	ECS_Sprinting,
 };
 
-UENUM(Blueprintable)
+UENUM(Blueprintable, BlueprintType)
 enum class EMainCharacterAnimState: uint8
 {
 	ECS_None,
