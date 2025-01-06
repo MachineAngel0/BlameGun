@@ -514,22 +514,25 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\EnemyBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\FlyToLocation.cpp">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\FlyToLocation.h">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Interface_EnemyAI.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Flying\FlyingComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Flying\FlyToLocation.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Sniper\SniperTeleportComponent.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Sniper\SniperTeleportLocation.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Inventory\ItemBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\FlyingManagerSubsystem.cpp">
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\EnemyMoveToManagerSubsystem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\Interface_ObjectPool.cpp">
@@ -631,10 +634,19 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Flying\FlyingComponent.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Flying\FlyToLocation.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Sniper\SniperTeleportComponent.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Sniper\SniperTeleportLocation.h">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\Inventory\ItemBase.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\FlyingManagerSubsystem.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\EnemyMoveToManagerSubsystem.h">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\Interface_ObjectPool.h">

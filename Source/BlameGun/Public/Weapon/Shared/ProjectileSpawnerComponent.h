@@ -9,6 +9,7 @@
 #include "Weapon/WeaponBaseComponent.h"
 #include "ProjectileSpawnerComponent.generated.h"
 
+enum class EAttackSocketType : uint8;
 struct FProjectileInfo;
 
 UENUM(Blueprintable, BlueprintType)
@@ -26,6 +27,8 @@ enum class EProjectileTransformType: uint8
 	ECS_Default,
 	ECS_Weapon,
 	ECS_Actor,
+	ECS_AttackEnemySocket,
+	ECS_SpecialAttackEnemySocket,
 };
 
 USTRUCT(BlueprintType)
@@ -105,6 +108,8 @@ public:
 	UFUNCTION(Blueprintable, BlueprintImplementableEvent)
 	FTransform ActorLineTrace();
 	
+	UFUNCTION(Blueprintable, BlueprintImplementableEvent)
+	FTransform SpawnAtEnemySocketLocation(EAttackSocketType AttackSocketToUse);
 
 
 	

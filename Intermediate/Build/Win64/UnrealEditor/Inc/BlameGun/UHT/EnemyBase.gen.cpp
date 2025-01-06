@@ -17,8 +17,93 @@ BLAMEGUN_API UClass* Z_Construct_UClass_AEnemyBase_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UInterface_EnemyAI_NoRegister();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EEnemyState();
 BLAMEGUN_API UFunction* Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature();
+BLAMEGUN_API UScriptStruct* Z_Construct_UScriptStruct_FEnemyStruct();
+ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 UPackage* Z_Construct_UPackage__Script_BlameGun();
 // End Cross Module References
+
+// Begin ScriptStruct FEnemyStruct
+static_assert(std::is_polymorphic<FEnemyStruct>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FEnemyStruct cannot be polymorphic unless super FTableRowBase is polymorphic");
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_EnemyStruct;
+class UScriptStruct* FEnemyStruct::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_EnemyStruct.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_EnemyStruct.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FEnemyStruct, (UObject*)Z_Construct_UPackage__Script_BlameGun(), TEXT("EnemyStruct"));
+	}
+	return Z_Registration_Info_UScriptStruct_EnemyStruct.OuterSingleton;
+}
+template<> BLAMEGUN_API UScriptStruct* StaticStruct<FEnemyStruct>()
+{
+	return FEnemyStruct::StaticStruct();
+}
+struct Z_Construct_UScriptStruct_FEnemyStruct_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//TODO: Update this\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "TODO: Update this" },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BehaviorTree_MetaData[] = {
+		{ "Category", "EnemyStruct" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NormalAttackSocket_MetaData[] = {
+		{ "Category", "EnemyStruct" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpecialAttackSocket_MetaData[] = {
+		{ "Category", "EnemyStruct" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_NormalAttackSocket;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_SpecialAttackSocket;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static void* NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FEnemyStruct>();
+	}
+	static const UECodeGen_Private::FStructParams StructParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0114000000010015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEnemyStruct, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BehaviorTree_MetaData), NewProp_BehaviorTree_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewProp_NormalAttackSocket = { "NormalAttackSocket", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEnemyStruct, NormalAttackSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NormalAttackSocket_MetaData), NewProp_NormalAttackSocket_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewProp_SpecialAttackSocket = { "SpecialAttackSocket", nullptr, (EPropertyFlags)0x0010000000010015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FEnemyStruct, SpecialAttackSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpecialAttackSocket_MetaData), NewProp_SpecialAttackSocket_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FEnemyStruct_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewProp_BehaviorTree,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewProp_NormalAttackSocket,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewProp_SpecialAttackSocket,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FEnemyStruct_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FEnemyStruct_Statics::StructParams = {
+	(UObject* (*)())Z_Construct_UPackage__Script_BlameGun,
+	Z_Construct_UScriptStruct_FTableRowBase,
+	&NewStructOps,
+	"EnemyStruct",
+	Z_Construct_UScriptStruct_FEnemyStruct_Statics::PropPointers,
+	UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FEnemyStruct_Statics::PropPointers),
+	sizeof(FEnemyStruct),
+	alignof(FEnemyStruct),
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	EStructFlags(0x00000001),
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FEnemyStruct_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FEnemyStruct_Statics::Struct_MetaDataParams)
+};
+UScriptStruct* Z_Construct_UScriptStruct_FEnemyStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_EnemyStruct.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_EnemyStruct.InnerSingleton, Z_Construct_UScriptStruct_FEnemyStruct_Statics::StructParams);
+	}
+	return Z_Registration_Info_UScriptStruct_EnemyStruct.InnerSingleton;
+}
+// End ScriptStruct FEnemyStruct
 
 // Begin Delegate FOnEnemyStateChange
 struct Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics
@@ -38,7 +123,7 @@ struct Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignat
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics::NewProp_EnemyState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics::NewProp_EnemyState = { "EnemyState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_BlameGun_eventOnEnemyStateChange_Parms, EnemyState), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(0, nullptr) }; // 1584016551
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics::NewProp_EnemyState = { "EnemyState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_BlameGun_eventOnEnemyStateChange_Parms, EnemyState), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(0, nullptr) }; // 713429605
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics::NewProp_EnemyState_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature_Statics::NewProp_EnemyState,
@@ -85,7 +170,7 @@ struct Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EnemyBase_eventGetEnemyState_Parms, ReturnValue), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(0, nullptr) }; // 1584016551
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EnemyBase_eventGetEnemyState_Parms, ReturnValue), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(0, nullptr) }; // 713429605
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics::NewProp_ReturnValue_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyBase_GetEnemyState_Statics::NewProp_ReturnValue,
@@ -132,7 +217,7 @@ struct Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics::NewProp_NewEnemyState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics::NewProp_NewEnemyState = { "NewEnemyState", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EnemyBase_eventSetEnemyState_Parms, NewEnemyState), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NewEnemyState_MetaData), NewProp_NewEnemyState_MetaData) }; // 1584016551
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics::NewProp_NewEnemyState = { "NewEnemyState", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EnemyBase_eventSetEnemyState_Parms, NewEnemyState), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NewEnemyState_MetaData), NewProp_NewEnemyState_MetaData) }; // 713429605
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics::NewProp_NewEnemyState_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyBase_SetEnemyState_Statics::NewProp_NewEnemyState,
@@ -200,16 +285,26 @@ struct Z_Construct_UClass_AEnemyBase_Statics
 		{ "Category", "EnemyBase" },
 		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NormalAttackSocket_MetaData[] = {
+		{ "Category", "EnemyBase" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpecialAttackSocket_MetaData[] = {
+		{ "Category", "EnemyBase" },
+		{ "ModuleRelativePath", "Public/Enemy/EnemyBase.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnEnemyStateChange;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_EnemyState_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_EnemyState;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_NormalAttackSocket;
+	static const UECodeGen_Private::FNamePropertyParams NewProp_SpecialAttackSocket;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AEnemyBase_GetEnemyState, "GetEnemyState" }, // 3231100427
-		{ &Z_Construct_UFunction_AEnemyBase_SetEnemyState, "SetEnemyState" }, // 1201081428
+		{ &Z_Construct_UFunction_AEnemyBase_GetEnemyState, "GetEnemyState" }, // 3778852599
+		{ &Z_Construct_UFunction_AEnemyBase_SetEnemyState, "SetEnemyState" }, // 3793247198
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
@@ -218,15 +313,19 @@ struct Z_Construct_UClass_AEnemyBase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_OnEnemyStateChange = { "OnEnemyStateChange", nullptr, (EPropertyFlags)0x0010100010080005, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, OnEnemyStateChange), Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnEnemyStateChange_MetaData), NewProp_OnEnemyStateChange_MetaData) }; // 1018628130
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_OnEnemyStateChange = { "OnEnemyStateChange", nullptr, (EPropertyFlags)0x0010100010080005, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, OnEnemyStateChange), Z_Construct_UDelegateFunction_BlameGun_OnEnemyStateChange__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnEnemyStateChange_MetaData), NewProp_OnEnemyStateChange_MetaData) }; // 1353109290
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyState = { "EnemyState", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, EnemyState), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EnemyState_MetaData), NewProp_EnemyState_MetaData) }; // 1584016551
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyState = { "EnemyState", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, EnemyState), Z_Construct_UEnum_BlameGun_EEnemyState, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EnemyState_MetaData), NewProp_EnemyState_MetaData) }; // 713429605
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BehaviorTree_MetaData), NewProp_BehaviorTree_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_NormalAttackSocket = { "NormalAttackSocket", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, NormalAttackSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NormalAttackSocket_MetaData), NewProp_NormalAttackSocket_MetaData) };
+const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_AEnemyBase_Statics::NewProp_SpecialAttackSocket = { "SpecialAttackSocket", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEnemyBase, SpecialAttackSocket), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpecialAttackSocket_MetaData), NewProp_SpecialAttackSocket_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyBase_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_OnEnemyStateChange,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyState_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_EnemyState,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_BehaviorTree,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_NormalAttackSocket,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyBase_Statics::NewProp_SpecialAttackSocket,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBase_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AEnemyBase_Statics::DependentSingletons[])() = {
@@ -235,7 +334,7 @@ UObject* (*const Z_Construct_UClass_AEnemyBase_Statics::DependentSingletons[])()
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyBase_Statics::DependentSingletons) < 16);
 const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AEnemyBase_Statics::InterfaceParams[] = {
-	{ Z_Construct_UClass_UInterface_EnemyAI_NoRegister, (int32)VTABLE_OFFSET(AEnemyBase, IInterface_EnemyAI), false },  // 1772928803
+	{ Z_Construct_UClass_UInterface_EnemyAI_NoRegister, (int32)VTABLE_OFFSET(AEnemyBase, IInterface_EnemyAI), false },  // 1634390755
 };
 const UECodeGen_Private::FClassParams Z_Construct_UClass_AEnemyBase_Statics::ClassParams = {
 	&AEnemyBase::StaticClass,
@@ -271,13 +370,16 @@ AEnemyBase::~AEnemyBase() {}
 // Begin Registration
 struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics
 {
+	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
+		{ FEnemyStruct::StaticStruct, Z_Construct_UScriptStruct_FEnemyStruct_Statics::NewStructOps, TEXT("EnemyStruct"), &Z_Registration_Info_UScriptStruct_EnemyStruct, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FEnemyStruct), 1685083586U) },
+	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyBase, AEnemyBase::StaticClass, TEXT("AEnemyBase"), &Z_Registration_Info_UClass_AEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBase), 552402490U) },
+		{ Z_Construct_UClass_AEnemyBase, AEnemyBase::StaticClass, TEXT("AEnemyBase"), &Z_Registration_Info_UClass_AEnemyBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyBase), 4206589833U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_3146559661(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_2256972285(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics::ClassInfo),
-	nullptr, 0,
+	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

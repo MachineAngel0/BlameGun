@@ -7,6 +7,7 @@
 
 #include "Interface_EnemyAI.generated.h"
 
+enum class EAttackSocketType : uint8;
 enum class EEnemyState : uint8;
 class UBehaviorTree;
 class AAIController;
@@ -42,5 +43,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void SetEnemyStateInterface(const EEnemyState EnemyStateToForward);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	FVector RequestAttackSocketLocation(EAttackSocketType AttackSocketType);
 	
 };

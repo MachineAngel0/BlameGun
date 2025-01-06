@@ -39,6 +39,11 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 
 void UHealthComponent::ProcessHealthChange(float HealthChangeAmount)
 {
+	if (!CanBeDamaged)
+	{
+		UE_LOG(Log_HealthComponent, Display, TEXT("Target Cannot Be Damaged"), CurrentHealth);
+		return;
+	}
 	UE_LOG(Log_HealthComponent, Display, TEXT("Health Before Damage: %f"), CurrentHealth);
 	UE_LOG(Log_HealthComponent, Display, TEXT("DamageAmount: %f"), HealthChangeAmount);
 	

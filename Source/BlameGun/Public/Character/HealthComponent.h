@@ -46,7 +46,7 @@ public:
 	
 
 
-	//TODO: if this ever comes up implement it
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool CanBeDamaged = true;
 
 	

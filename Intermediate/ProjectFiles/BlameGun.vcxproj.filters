@@ -135,12 +135,6 @@
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\EnemyBase.cpp">
       <Filter>Source\BlameGun\Private\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\FlyToLocation.cpp">
-      <Filter>Source\BlameGun\Private\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\FlyToLocation.h">
-      <Filter>Source\BlameGun\Private\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Interface_EnemyAI.cpp">
       <Filter>Source\BlameGun\Private\Enemy</Filter>
     </ClCompile>
@@ -149,6 +143,18 @@
     </Filter>
     <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Flying\FlyingComponent.cpp">
       <Filter>Source\BlameGun\Private\Enemy\Flying</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Flying\FlyToLocation.cpp">
+      <Filter>Source\BlameGun\Private\Enemy\Flying</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Private\Enemy\Sniper">
+      <UniqueIdentifier>{B6B0E23C-B4F4-35BB-92EF-343D025D2C07}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Sniper\SniperTeleportComponent.cpp">
+      <Filter>Source\BlameGun\Private\Enemy\Sniper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Private\Enemy\Sniper\SniperTeleportLocation.cpp">
+      <Filter>Source\BlameGun\Private\Enemy\Sniper</Filter>
     </ClCompile>
     <Filter Include="Source\BlameGun\Private\Inventory">
       <UniqueIdentifier>{04B9198E-E034-3986-ACB1-222EAAE66E09}</UniqueIdentifier>
@@ -159,7 +165,7 @@
     <Filter Include="Source\BlameGun\Private\ObjectPoolManager">
       <UniqueIdentifier>{F3CA45D3-E66A-3427-8FC4-2D80353E3208}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\FlyingManagerSubsystem.cpp">
+    <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\EnemyMoveToManagerSubsystem.cpp">
       <Filter>Source\BlameGun\Private\ObjectPoolManager</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Private\ObjectPoolManager\Interface_ObjectPool.cpp">
@@ -291,6 +297,18 @@
     <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Flying\FlyingComponent.h">
       <Filter>Source\BlameGun\Public\Enemy\Flying</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Flying\FlyToLocation.h">
+      <Filter>Source\BlameGun\Public\Enemy\Flying</Filter>
+    </ClCompile>
+    <Filter Include="Source\BlameGun\Public\Enemy\Sniper">
+      <UniqueIdentifier>{7DDEBD25-E3E6-374E-B541-EC08090D3CA1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Sniper\SniperTeleportComponent.h">
+      <Filter>Source\BlameGun\Public\Enemy\Sniper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\BlameGun\Public\Enemy\Sniper\SniperTeleportLocation.h">
+      <Filter>Source\BlameGun\Public\Enemy\Sniper</Filter>
+    </ClCompile>
     <Filter Include="Source\BlameGun\Public\Inventory">
       <UniqueIdentifier>{0D8D30F1-2E45-3D60-8501-744A1394EDC0}</UniqueIdentifier>
     </Filter>
@@ -300,7 +318,7 @@
     <Filter Include="Source\BlameGun\Public\ObjectPoolManager">
       <UniqueIdentifier>{D1E49B1B-15D4-3A1E-BD40-1ED0DA3E4842}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\FlyingManagerSubsystem.h">
+    <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\EnemyMoveToManagerSubsystem.h">
       <Filter>Source\BlameGun\Public\ObjectPoolManager</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\BlameGun\Public\ObjectPoolManager\Interface_ObjectPool.h">

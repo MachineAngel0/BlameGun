@@ -5,6 +5,7 @@
 
 #include "DamageInfoComponent.h"
 #include "Interface_Damage.h"
+#include "BlameGun/Enums_Structs/Enum_Enemy.h"
 #include "ObjectPoolManager/ProjectilePoolSubsystem.h"
 #include "Weapon/Shared/ProjectileActor.h"
 
@@ -125,6 +126,12 @@ void UProjectileSpawnerComponent::SpawnProjectileFromPool()
 		break;
 	case EProjectileTransformType::ECS_Actor:
 		TransformForSpawning = ActorLineTrace();
+		break;
+	case EProjectileTransformType::ECS_AttackEnemySocket:
+		TransformForSpawning = SpawnAtEnemySocketLocation(EAttackSocketType::ECS_NormalAttack);
+		break;
+	case EProjectileTransformType::ECS_SpecialAttackEnemySocket:
+		TransformForSpawning = SpawnAtEnemySocketLocation(EAttackSocketType::ECS_SpecialAttack);
 		break;
 	}
 

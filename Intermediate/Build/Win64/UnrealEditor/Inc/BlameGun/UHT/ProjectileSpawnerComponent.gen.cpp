@@ -16,6 +16,7 @@ BLAMEGUN_API UClass* Z_Construct_UClass_AProjectileActor_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UProjectileSpawnerComponent();
 BLAMEGUN_API UClass* Z_Construct_UClass_UProjectileSpawnerComponent_NoRegister();
 BLAMEGUN_API UClass* Z_Construct_UClass_UWeaponBaseComponent();
+BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EAttackSocketType();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EProjectilePattern();
 BLAMEGUN_API UEnum* Z_Construct_UEnum_BlameGun_EProjectileTransformType();
 BLAMEGUN_API UScriptStruct* Z_Construct_UScriptStruct_FProjectileInfo();
@@ -104,7 +105,9 @@ struct Z_Construct_UEnum_BlameGun_EProjectileTransformType_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "ECS_Actor.Name", "EProjectileTransformType::ECS_Actor" },
+		{ "ECS_AttackEnemySocket.Name", "EProjectileTransformType::ECS_AttackEnemySocket" },
 		{ "ECS_Default.Name", "EProjectileTransformType::ECS_Default" },
+		{ "ECS_SpecialAttackEnemySocket.Name", "EProjectileTransformType::ECS_SpecialAttackEnemySocket" },
 		{ "ECS_Weapon.Name", "EProjectileTransformType::ECS_Weapon" },
 		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
@@ -114,6 +117,8 @@ struct Z_Construct_UEnum_BlameGun_EProjectileTransformType_Statics
 		{ "EProjectileTransformType::ECS_Default", (int64)EProjectileTransformType::ECS_Default },
 		{ "EProjectileTransformType::ECS_Weapon", (int64)EProjectileTransformType::ECS_Weapon },
 		{ "EProjectileTransformType::ECS_Actor", (int64)EProjectileTransformType::ECS_Actor },
+		{ "EProjectileTransformType::ECS_AttackEnemySocket", (int64)EProjectileTransformType::ECS_AttackEnemySocket },
+		{ "EProjectileTransformType::ECS_SpecialAttackEnemySocket", (int64)EProjectileTransformType::ECS_SpecialAttackEnemySocket },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -190,7 +195,7 @@ const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FProject
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_ProjectilePattern_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_ProjectilePattern = { "ProjectilePattern", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileTypeParams, ProjectilePattern), Z_Construct_UEnum_BlameGun_EProjectilePattern, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectilePattern_MetaData), NewProp_ProjectilePattern_MetaData) }; // 3302727723
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_TransformType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_TransformType = { "TransformType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileTypeParams, TransformType), Z_Construct_UEnum_BlameGun_EProjectileTransformType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TransformType_MetaData), NewProp_TransformType_MetaData) }; // 767645429
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_TransformType = { "TransformType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FProjectileTypeParams, TransformType), Z_Construct_UEnum_BlameGun_EProjectileTransformType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TransformType_MetaData), NewProp_TransformType_MetaData) }; // 746800445
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_ProjectileReference,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewProp_ProjectilePattern_Underlying,
@@ -448,6 +453,58 @@ DEFINE_FUNCTION(UProjectileSpawnerComponent::execReadProjectileTypeDataTable)
 }
 // End Class UProjectileSpawnerComponent Function ReadProjectileTypeDataTable
 
+// Begin Class UProjectileSpawnerComponent Function SpawnAtEnemySocketLocation
+struct ProjectileSpawnerComponent_eventSpawnAtEnemySocketLocation_Parms
+{
+	EAttackSocketType AttackSocketToUse;
+	FTransform ReturnValue;
+};
+static const FName NAME_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation = FName(TEXT("SpawnAtEnemySocketLocation"));
+FTransform UProjectileSpawnerComponent::SpawnAtEnemySocketLocation(EAttackSocketType AttackSocketToUse)
+{
+	ProjectileSpawnerComponent_eventSpawnAtEnemySocketLocation_Parms Parms;
+	Parms.AttackSocketToUse=AttackSocketToUse;
+	UFunction* Func = FindFunctionChecked(NAME_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation);
+	ProcessEvent(Func,&Parms);
+	return Parms.ReturnValue;
+}
+struct Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "IsBlueprintBase", "true" },
+		{ "ModuleRelativePath", "Public/Weapon/Shared/ProjectileSpawnerComponent.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FBytePropertyParams NewProp_AttackSocketToUse_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_AttackSocketToUse;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::NewProp_AttackSocketToUse_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::NewProp_AttackSocketToUse = { "AttackSocketToUse", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileSpawnerComponent_eventSpawnAtEnemySocketLocation_Parms, AttackSocketToUse), Z_Construct_UEnum_BlameGun_EAttackSocketType, METADATA_PARAMS(0, nullptr) }; // 4268659785
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ProjectileSpawnerComponent_eventSpawnAtEnemySocketLocation_Parms, ReturnValue), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::NewProp_AttackSocketToUse_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::NewProp_AttackSocketToUse,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UProjectileSpawnerComponent, nullptr, "SpawnAtEnemySocketLocation", nullptr, nullptr, Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::PropPointers), sizeof(ProjectileSpawnerComponent_eventSpawnAtEnemySocketLocation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::Function_MetaDataParams) };
+static_assert(sizeof(ProjectileSpawnerComponent_eventSpawnAtEnemySocketLocation_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UProjectileSpawnerComponent Function SpawnAtEnemySocketLocation
+
 // Begin Class UProjectileSpawnerComponent Function SpawnProjectileFromPool
 struct Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileFromPool_Statics
 {
@@ -669,6 +726,7 @@ struct Z_Construct_UClass_UProjectileSpawnerComponent_Statics
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_CirclePatternSpawner, "CirclePatternSpawner" }, // 2585897575
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_ReadProjectileInfoDataTable, "ReadProjectileInfoDataTable" }, // 1472077261
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_ReadProjectileTypeDataTable, "ReadProjectileTypeDataTable" }, // 1096418318
+		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnAtEnemySocketLocation, "SpawnAtEnemySocketLocation" }, // 282171136
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_SpawnProjectileFromPool, "SpawnProjectileFromPool" }, // 2351428440
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_TrianglePattern, "TrianglePattern" }, // 1548275090
 		{ &Z_Construct_UFunction_UProjectileSpawnerComponent_WeaponLineTrace, "WeaponLineTrace" }, // 1744723146
@@ -680,7 +738,7 @@ struct Z_Construct_UClass_UProjectileSpawnerComponent_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProjectileSpawnerComponent_Statics::NewProp_ProjectileType_DT = { "ProjectileType_DT", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProjectileSpawnerComponent, ProjectileType_DT), Z_Construct_UScriptStruct_FDataTableRowHandle, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileType_DT_MetaData), NewProp_ProjectileType_DT_MetaData) }; // 1360917958
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProjectileSpawnerComponent_Statics::NewProp_ProjectileTypeParams = { "ProjectileTypeParams", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProjectileSpawnerComponent, ProjectileTypeParams), Z_Construct_UScriptStruct_FProjectileTypeParams, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileTypeParams_MetaData), NewProp_ProjectileTypeParams_MetaData) }; // 3622802658
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProjectileSpawnerComponent_Statics::NewProp_ProjectileTypeParams = { "ProjectileTypeParams", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProjectileSpawnerComponent, ProjectileTypeParams), Z_Construct_UScriptStruct_FProjectileTypeParams, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileTypeParams_MetaData), NewProp_ProjectileTypeParams_MetaData) }; // 4021652715
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProjectileSpawnerComponent_Statics::NewProp_ProjectileInfo_DT = { "ProjectileInfo_DT", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProjectileSpawnerComponent, ProjectileInfo_DT), Z_Construct_UScriptStruct_FDataTableRowHandle, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileInfo_DT_MetaData), NewProp_ProjectileInfo_DT_MetaData) }; // 1360917958
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProjectileSpawnerComponent_Statics::NewProp_ProjectileInfo = { "ProjectileInfo", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProjectileSpawnerComponent, ProjectileInfo), Z_Construct_UScriptStruct_FProjectileInfo, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileInfo_MetaData), NewProp_ProjectileInfo_MetaData) }; // 3167401113
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UProjectileSpawnerComponent_Statics::NewProp_TransformForSpawning = { "TransformForSpawning", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UProjectileSpawnerComponent, TransformForSpawning), Z_Construct_UScriptStruct_FTransform, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TransformForSpawning_MetaData), NewProp_TransformForSpawning_MetaData) };
@@ -737,16 +795,16 @@ struct Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shar
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EProjectilePattern_StaticEnum, TEXT("EProjectilePattern"), &Z_Registration_Info_UEnum_EProjectilePattern, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3302727723U) },
-		{ EProjectileTransformType_StaticEnum, TEXT("EProjectileTransformType"), &Z_Registration_Info_UEnum_EProjectileTransformType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 767645429U) },
+		{ EProjectileTransformType_StaticEnum, TEXT("EProjectileTransformType"), &Z_Registration_Info_UEnum_EProjectileTransformType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 746800445U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FProjectileTypeParams::StaticStruct, Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewStructOps, TEXT("ProjectileTypeParams"), &Z_Registration_Info_UScriptStruct_ProjectileTypeParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FProjectileTypeParams), 3622802658U) },
+		{ FProjectileTypeParams::StaticStruct, Z_Construct_UScriptStruct_FProjectileTypeParams_Statics::NewStructOps, TEXT("ProjectileTypeParams"), &Z_Registration_Info_UScriptStruct_ProjectileTypeParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FProjectileTypeParams), 4021652715U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UProjectileSpawnerComponent, UProjectileSpawnerComponent::StaticClass, TEXT("UProjectileSpawnerComponent"), &Z_Registration_Info_UClass_UProjectileSpawnerComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProjectileSpawnerComponent), 1122269142U) },
+		{ Z_Construct_UClass_UProjectileSpawnerComponent, UProjectileSpawnerComponent::StaticClass, TEXT("UProjectileSpawnerComponent"), &Z_Registration_Info_UClass_UProjectileSpawnerComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UProjectileSpawnerComponent), 148496404U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_1733906693(TEXT("/Script/BlameGun"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_1323327779(TEXT("/Script/BlameGun"),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::ScriptStructInfo),
 	Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BlameGun_5_5_Source_BlameGun_Public_Weapon_Shared_ProjectileSpawnerComponent_h_Statics::EnumInfo));

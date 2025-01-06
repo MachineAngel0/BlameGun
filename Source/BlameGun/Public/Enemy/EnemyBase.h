@@ -8,7 +8,25 @@
 #include "BlameGun/Enums_Structs/Enum_Enemy.h"
 #include "EnemyBase.generated.h"
 
+//TODO: Update this
+USTRUCT(BlueprintType)
+struct FEnemyStruct: public FTableRowBase
+{
+	GENERATED_BODY()
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TObjectPtr<UBehaviorTree> BehaviorTree = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FName NormalAttackSocket = "";
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FName SpecialAttackSocket = "";
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float AISightRange = 100.0f;
+
+};
 
 enum class EEnemyState : uint8;
 class UBehaviorTree;
@@ -30,6 +48,7 @@ public:
 
 	virtual AEnemyBase* RequestEnemyBase_Implementation() override;
 	virtual UBehaviorTree* RequestBehaviorTree_Implementation() override;
+	virtual FVector RequestAttackSocketLocation_Implementation(EAttackSocketType AttackSocketType) override;
 	
 
 	
@@ -52,6 +71,14 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UBehaviorTree* BehaviorTree = nullptr;
-	
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FName NormalAttackSocket = "";
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	FName SpecialAttackSocket = "";
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	float AISightRange = 100.0f;
 };
 

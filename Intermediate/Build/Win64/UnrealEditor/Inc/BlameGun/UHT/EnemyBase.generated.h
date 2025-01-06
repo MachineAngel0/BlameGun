@@ -15,16 +15,24 @@ enum class EEnemyState : uint8;
 #endif
 #define BLAMEGUN_EnemyBase_generated_h
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_16_DELEGATE \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_15_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FEnemyStruct_Statics; \
+	BLAMEGUN_API static class UScriptStruct* StaticStruct(); \
+	typedef FTableRowBase Super;
+
+
+template<> BLAMEGUN_API UScriptStruct* StaticStruct<struct FEnemyStruct>();
+
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_31_DELEGATE \
 BLAMEGUN_API void FOnEnemyStateChange_DelegateWrapper(const FMulticastScriptDelegate& OnEnemyStateChange, EEnemyState EnemyState);
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetEnemyState); \
 	DECLARE_FUNCTION(execSetEnemyState);
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_INCLASS_NO_PURE_DECLS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemyBase(); \
 	friend struct Z_Construct_UClass_AEnemyBase_Statics; \
@@ -34,7 +42,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AEnemyBase*>(this); }
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_ENHANCED_CONSTRUCTORS \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AEnemyBase(AEnemyBase&&); \
@@ -46,13 +54,13 @@ public: \
 	NO_API virtual ~AEnemyBase();
 
 
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_21_PROLOG
-#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_GENERATED_BODY \
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_36_PROLOG
+#define FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_INCLASS_NO_PURE_DECLS \
-	FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_24_ENHANCED_CONSTRUCTORS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_INCLASS_NO_PURE_DECLS \
+	FID_BlameGun_5_5_Source_BlameGun_Public_Enemy_EnemyBase_h_39_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
